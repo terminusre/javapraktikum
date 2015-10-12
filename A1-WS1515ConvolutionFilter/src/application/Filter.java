@@ -13,7 +13,10 @@ public abstract class Filter {
 		@Override
 		double[][] generateFilter() {
 			// TODO Auto-generated method stub
-			return null;
+			
+			double[][] Filter = {{10.1, 0.1, 0.1}, {0.1, 0.1, 0.1}, {0.1, 0.1, 0.1}};
+			
+			return Filter;
 		}
 
 	};
