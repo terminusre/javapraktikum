@@ -33,6 +33,7 @@ public abstract class Filter {
 
 			double[][] filter = generateFilter();
 			double factor = calculateFactor();
+			pf(filter);
 
 			Color col;
 			// iterate pixel by pixel over whole image
@@ -89,7 +90,7 @@ public abstract class Filter {
 
 		for (int y = 0; y < filter.length; y++) {
 			for (int x = 0; x < filter[0].length; x++) {
-				factor += filter[x][y];
+				factor += filter[y][x];
 			}
 		}
 
@@ -102,7 +103,7 @@ public abstract class Filter {
 	private static void pf(double[][] filter) {
 		for (int y = 0; y < filter.length; y++) {
 			for (int x = 0; x < filter[0].length; x++) {
-				System.out.print(filter[x][y] + " ");
+				System.out.print(filter[y][x] + " ");
 			}
 			System.out.println("");
 		}
