@@ -8,47 +8,61 @@ import javafx.scene.paint.Color;
 
 public abstract class Filter {
 
-	private Image _image;
-	PixelReader _reader;
-	private WritableImage _filteredImage;
-	PixelWriter _writer;
-
 	public Filter() {
 		try {
-			Image _image = new Image(getClass().getResourceAsStream(
+			Image image = new Image(getClass().getResourceAsStream(
 					"Blumenwiese.jpg"));
-			_reader = _image.getPixelReader();
-			//Color col = _reader.getColor(1, 1);// (readX, readY);
+			apply(image);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
 
-			_filteredImage = new WritableImage((int)_image.getWidth(), (int) _image.getHeight());
-			_writer = _filteredImage.getPixelWriter();
-			//_writer.setColor(1, 1, col);// (posX,poxY,color);
+	public Image apply(Image origImage) {
 
-			/*
-			 * System.out.println("data " + (int) _image.getWidth() + " / " +
-			 * (int) _image.getHeight());
-			 */
+		WritableImage filteredImage = null;
+		try {
+
+			PixelReader reader = origImage.getPixelReader();
+
+			int imgHeight = (int) origImage.getHeight();
+			int imgWidth = (int) origImage.getWidth();
+
+			filteredImage = new WritableImage(imgWidth, imgHeight);
+			PixelWriter writer = filteredImage.getPixelWriter();
+
+			double[][] filter = generateFilter();
+
+			Color col;
+			for (int y = 0; y < imgHeight; y++) {
+				for (int x = 0; x < imgWidth; x++) {
+					col = reader.getColor(x, y); // (readX, readY)
+					writer.setColor(x, y,
+							new Color(col.getRed(), 0.0, 0.0, 1.0));// col.getGreen(),
+																	// col.getBlue()));
+																	// // (posX,
+																	// poxY,
+																	// color);
+				}
+			}
 
 		} catch (Exception e) {
-			System.out.println("Satz mit X, das war wohl nix!");
+			System.out.println(e);
 		}
+
+		return filteredImage;
+	}
+
+	public Filter(double bias) {
+		// TODO
+	}
+
+	private double calculateFactor() {
+		// TODO
+		return 0.0;
 	}
 
 	abstract double[][] generateFilter();
-
-	private double[][] init() {
-		double[][] filter;
-		int lines = (int) _image.getHeight();
-		int linewidth = (int) _image.getWidth();
-
-		filter = new double[lines][];
-
-		for (int i = 0; i < lines; i++) {
-			filter[i] = new double[linewidth];
-		}
-
-		return filter;
-	}
 
 	public static final Filter IDENTITY = new Filter() {
 		@Override
@@ -58,8 +72,8 @@ public abstract class Filter {
 
 		@Override
 		double[][] generateFilter() {
-			//double[][] filter = init();
-			return null;
+			return new double[][] { { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 },
+					{ 0.0, 0.0, 0.0 } };
 		}
 
 	};
@@ -180,20 +194,4 @@ public abstract class Filter {
 		}
 	};
 
-	public Image apply(Image origImage) {
-		return null;
-	}
-
-	/*
-	 * public Filter() { // TODO }
-	 */
-
-	public Filter(double bias) {
-		// TODO
-	}
-
-	private double calculateFactor() {
-		// TODO
-		return 0.0;
-	}
 }
