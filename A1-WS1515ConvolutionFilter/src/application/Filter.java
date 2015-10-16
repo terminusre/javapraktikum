@@ -34,6 +34,7 @@ public abstract class Filter {
 			double[][] filter = generateFilter();
 			double factor = calculateFactor();
 			pf(filter);
+			System.out.println("");
 
 			Color col;
 			// iterate pixel by pixel over whole image
@@ -56,7 +57,6 @@ public abstract class Filter {
 								rgbo[0] += col.getRed() * filter[yf][xf];
 								rgbo[1] += col.getGreen() * filter[yf][xf];
 								rgbo[2] += col.getBlue() * filter[yf][xf];
-								//rgbo[3] += col.getOpacity() * filter[yf][xf];
 							}
 
 						}
@@ -123,7 +123,7 @@ public abstract class Filter {
 
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
-					filter[x][y] = 0.0;
+					filter[y][x] = 0.0;
 				}
 			}
 
@@ -162,12 +162,12 @@ public abstract class Filter {
 
 				if (x == (filter.length / 2) - delta
 						|| x == (filter.length / 2) + delta)
-					filter[x][y] = val;
+					filter[y][x] = val;
 				else if (x > (filter.length / 2) + delta
 						|| x < (filter.length / 2) - delta)
-					filter[x][y] = 0.0;
+					filter[y][x] = 0.0;
 				else
-					filter[x][y] = val;
+					filter[y][x] = val;
 			}
 		}
 
@@ -198,7 +198,7 @@ public abstract class Filter {
 
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
-					filter[x][y] = -1.0;
+					filter[y][x] = -1.0;
 				}
 			}
 
@@ -220,9 +220,9 @@ public abstract class Filter {
 
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
-					filter[x][y] = 0.0;
+					filter[y][x] = 0.0;
 					if (x == y)
-						filter[x][y] = 1.0;
+						filter[y][x] = 1.0;
 				}
 			}
 
@@ -242,12 +242,12 @@ public abstract class Filter {
 
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
-					filter[x][y] = 0.0;
+					filter[y][x] = 0.0;
 				}
 			}
 
-			filter[0][2] = -1.0;
-			filter[1][2] = -1.0;
+			filter[2][0] = -1.0;
+			filter[2][1] = -1.0;
 			filter[2][2] = 2.0;
 
 			return filter;
@@ -265,9 +265,9 @@ public abstract class Filter {
 
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
-					filter[x][y] = 0.0;
+					filter[y][x] = 0.0;
 					if (x == 2)
-						filter[x][y] = -1.0;
+						filter[y][x] = -1.0;
 				}
 			}
 
@@ -288,7 +288,7 @@ public abstract class Filter {
 
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
-					filter[x][y] = -1.0;
+					filter[y][x] = -1.0;
 				}
 			}
 
@@ -312,9 +312,9 @@ public abstract class Filter {
 				for (int x = 0; x < filter[0].length; x++) {
 					if (x == 0 || x == filter[0].length - 1 || y == 0
 							|| y == filter[0].length - 1)
-						filter[x][y] = -1.0;
+						filter[y][x] = -1.0;
 					else
-						filter[x][y] = 2.0;
+						filter[y][x] = 2.0;
 				}
 			}
 
@@ -337,11 +337,11 @@ public abstract class Filter {
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
 					if (x + y <= 1)
-						filter[x][y] = -1.0;
+						filter[y][x] = -1.0;
 					else if (x + y == 2)
-						filter[x][y] = 0.0;
+						filter[y][x] = 0.0;
 					else
-						filter[x][y] = 1.0;
+						filter[y][x] = 1.0;
 				}
 			}
 
