@@ -8,10 +8,15 @@ import javafx.scene.paint.Color;
 
 public abstract class Filter {
 
-	double _bias;
+	private double bias;
+	private double[][] filter;
+	private double factor;
+	private Boolean debug = false;
 
 	public Filter(double bias) {
-		_bias = bias;
+		filter = generateFilter();
+		factor = calculateFactor();
+		this.bias = bias;
 	}
 
 	public Filter() {
@@ -21,63 +26,57 @@ public abstract class Filter {
 	public Image apply(Image origImage) {
 
 		WritableImage filteredImage = null;
-		try {
 
-			PixelReader reader = origImage.getPixelReader();
+		PixelReader reader = origImage.getPixelReader();
 
-			int imgHeight = (int) origImage.getHeight();
-			int imgWidth = (int) origImage.getWidth();
+		int imgHeight = (int) origImage.getHeight();
+		int imgWidth = (int) origImage.getWidth();
 
-			filteredImage = new WritableImage(imgWidth, imgHeight);
-			PixelWriter writer = filteredImage.getPixelWriter();
+		filteredImage = new WritableImage(imgWidth, imgHeight);
+		PixelWriter writer = filteredImage.getPixelWriter();
 
-			double[][] filter = generateFilter();
-			double factor = calculateFactor();
+		if (debug) {
 			pf(filter);
 			System.out.println("");
+		}
 
-			Color col;
-			// iterate pixel by pixel over whole image
-			for (int y = 0; y < imgHeight; y++) {
-				for (int x = 0; x < imgWidth; x++) {
+		Color col;
+		// iterate pixel by pixel over whole image
+		for (int y = 0; y < imgHeight; y++) {
+			for (int x = 0; x < imgWidth; x++) {
 
-					double[] rgbo = { 0.0, 0.0, 0.0, 1.0 };
+				double[] rgbo = { 0.0, 0.0, 0.0, 1.0 };
 
-					// iterate over filter matrix
-					for (int yf = 0; yf < filter.length; yf++) {
-						for (int xf = 0; xf < filter[0].length; xf++) {
-							if (x + xf - (filter[0].length / 2) > -1
-									&& x + xf - (filter[0].length / 2) < imgWidth
-									&& y + yf - (filter.length / 2) > -1
-									&& y + yf - (filter.length / 2) < imgHeight) {
+				// iterate over filter matrix
+				for (int yf = 0; yf < filter.length; yf++) {
+					for (int xf = 0; xf < filter[0].length; xf++) {
+						if (x + xf - (filter[0].length / 2) > -1
+								&& x + xf - (filter[0].length / 2) < imgWidth
+								&& y + yf - (filter.length / 2) > -1
+								&& y + yf - (filter.length / 2) < imgHeight) {
 
-								col = reader.getColor(x + xf
-										- (filter[0].length / 2), y + yf
-										- (filter.length / 2));
-								rgbo[0] += col.getRed() * filter[yf][xf];
-								rgbo[1] += col.getGreen() * filter[yf][xf];
-								rgbo[2] += col.getBlue() * filter[yf][xf];
-							}
-
+							col = reader.getColor(x + xf
+									- (filter[0].length / 2), y + yf
+									- (filter.length / 2));
+							rgbo[0] += col.getRed() * filter[yf][xf];
+							rgbo[1] += col.getGreen() * filter[yf][xf];
+							rgbo[2] += col.getBlue() * filter[yf][xf];
 						}
-					}
 
-					for (int i = 0; i < 3; i++) {
-						rgbo[i] = (rgbo[i] * factor) + _bias;
-						if (rgbo[i] < 0.0)
-							rgbo[i] = 0.0;
-						if (rgbo[i] > 1.0)
-							rgbo[i] = 1.0;
 					}
-					
-
-					writer.setColor(x, y, new Color(rgbo[0], rgbo[1], rgbo[2],
-							rgbo[3]));
 				}
-			}
 
-		} catch (Exception e) {
-			System.out.println(e);
+				for (int i = 0; i < 3; i++) {
+					rgbo[i] = (rgbo[i] * factor) + bias;
+					if (rgbo[i] < 0.0)
+						rgbo[i] = 0.0;
+					if (rgbo[i] > 1.0)
+						rgbo[i] = 1.0;
+				}
+
+				writer.setColor(x, y, new Color(rgbo[0], rgbo[1], rgbo[2],
+						rgbo[3]));
+			}
 		}
 
 		return filteredImage;
@@ -108,7 +107,7 @@ public abstract class Filter {
 			System.out.println("");
 		}
 	}
-	
+
 	abstract double[][] generateFilter();
 
 	public static final Filter IDENTITY = new Filter() {
@@ -120,12 +119,6 @@ public abstract class Filter {
 		@Override
 		double[][] generateFilter() {
 			double[][] filter = new double[3][3];
-
-			for (int y = 0; y < filter.length; y++) {
-				for (int x = 0; x < filter[0].length; x++) {
-					filter[y][x] = 0.0;
-				}
-			}
 
 			filter[1][1] = 1.0;
 
@@ -160,14 +153,10 @@ public abstract class Filter {
 
 			for (int x = 0; x < filter[0].length; x++) {
 
-				if (x == (filter.length / 2) - delta
-						|| x == (filter.length / 2) + delta)
+				if (x >= (filter.length / 2) - delta
+						&& x <= (filter.length / 2) + delta)
 					filter[y][x] = val;
-				else if (x > (filter.length / 2) + delta
-						|| x < (filter.length / 2) - delta)
-					filter[y][x] = 0.0;
-				else
-					filter[y][x] = val;
+
 			}
 		}
 
@@ -220,7 +209,6 @@ public abstract class Filter {
 
 			for (int y = 0; y < filter.length; y++) {
 				for (int x = 0; x < filter[0].length; x++) {
-					filter[y][x] = 0.0;
 					if (x == y)
 						filter[y][x] = 1.0;
 				}
@@ -240,12 +228,6 @@ public abstract class Filter {
 		double[][] generateFilter() {
 			double[][] filter = new double[5][5];
 
-			for (int y = 0; y < filter.length; y++) {
-				for (int x = 0; x < filter[0].length; x++) {
-					filter[y][x] = 0.0;
-				}
-			}
-
 			filter[2][0] = -1.0;
 			filter[2][1] = -1.0;
 			filter[2][2] = 2.0;
@@ -264,11 +246,7 @@ public abstract class Filter {
 			double[][] filter = new double[5][5];
 
 			for (int y = 0; y < filter.length; y++) {
-				for (int x = 0; x < filter[0].length; x++) {
-					filter[y][x] = 0.0;
-					if (x == 2)
-						filter[y][x] = -1.0;
-				}
+				filter[y][2] = -1.0;
 			}
 
 			filter[2][2] = 4.0;
@@ -338,9 +316,8 @@ public abstract class Filter {
 				for (int x = 0; x < filter[0].length; x++) {
 					if (x + y <= 1)
 						filter[y][x] = -1.0;
-					else if (x + y == 2)
-						filter[y][x] = 0.0;
-					else
+					else if (x + y > 2)
+
 						filter[y][x] = 1.0;
 				}
 			}
