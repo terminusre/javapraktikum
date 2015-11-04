@@ -7,10 +7,10 @@ public class IataAirline implements Iata {
 	String country = null;
 	String name = null;
 
-	public IataAirline(String code, String country, String name) {
+	public IataAirline(String code, String name, String country) {
 		this.code = code;
-		this.country = country;
 		this.name = name;
+		this.country = country;
 	}
 
 	@Override
@@ -27,10 +27,10 @@ public class IataAirline implements Iata {
 	public String getName() {
 		return name;
 	}
-	
+
 	@Override
-	public String toString(){
-		return "Code: " + code + ", Country: " + country + ", Name: " + name;
+	public String toString() {
+		return code + ":" + country + ":" + name;
 	}
 
 }
