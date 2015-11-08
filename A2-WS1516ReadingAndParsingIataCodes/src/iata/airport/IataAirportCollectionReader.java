@@ -8,13 +8,16 @@ import java.net.URL;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
 	public Collection<? extends Iata> readLocalCollection() {
-		return readSingleCollection(getClass().getResource("A.htm"));
+		URL url = null;
+		for(int i = 0; i < 26; i++){
+			System.out.println("" + );
+			readSingleCollection(getClass().getResource(((char) (65 + i)) + ".htm"));
+		}
+		return url;
 	}
 
 	protected Collection<? extends Iata> readSingleCollection(URL url) {

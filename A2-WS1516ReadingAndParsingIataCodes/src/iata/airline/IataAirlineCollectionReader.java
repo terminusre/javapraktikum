@@ -28,51 +28,30 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 			e.printStackTrace();
 		}
 
-		LinkedList airlines = new LinkedList();
-		//
-		// Pattern airline_pattern = Pattern.compile("<tr>.*?</tr>");
-		//
-		// scanner.findWithinHorizon(airline_pattern, 0);
-		//
-		// String data = scanner.findWithinHorizon(airline_pattern, 0);
-		// if (data == null)
-		// System.out.println("fail");
-		// while (data != null) {
-		// airlines.add(new IataAirline("a", "b", "c"));
-		// System.out.println(data);
-		// data = scanner.findWithinHorizon(airline_pattern, 0);
-		// }
-
-		String tst = "<tst> Daten1 \n Daten2 </tst>";
-		Pattern p = Pattern.compile("<tst>(.*)</tst>");
-		Matcher m = p.matcher(tst);
-		String res = "false";
-		if (m.matches())
-			res = m.group(1);
-		System.out.println(res);
-
 		String code = null;
 		String name = null;
 		String country = null;
+		LinkedList airlines = new LinkedList();
 
-		Matcher matcher = null;
-		
-		if(matcher.matches()){
-			code = matcher.group(1);
-		}
-		code = 
 		scanner.findWithinHorizon("<th>Bemerkung</th>", 0);
+		Matcher matcher = null;
 
-		String line = null;
-		// String data = scanner.findWithinHorizon("<tr>", 0);
+		String data = scanner.findWithinHorizon(Pattern.compile("<tr>"), 0);
+		String line = scanner.nextLine();
 
-		// while (data != null) {
-		// line = scanner.nextLine();
-		// data = data + " " + line;
-		// System.out.println(data);
-		// data = scanner.findWithinHorizon("<tr>", 0);
-		// }
-		airlines.add(new IataAirline(code, name, country));
+//		while (!line.equals("</tr>")) {
+//			System.out.println(line);
+//			matcher = Pattern.compile("<td>([A-Z]{2}).*?</td>").matcher(line);
+//			if (matcher.matches()){
+//				code = matcher.group(1);
+//				System.out.println(code);
+//			} else
+//				System.out.println("no match!");
+//			name = "name";
+//			country = "country";
+//			airlines.add(new IataAirline(code, name, country));
+//			line = scanner.nextLine();
+//		}
 
 		scanner.close();
 		return airlines;
