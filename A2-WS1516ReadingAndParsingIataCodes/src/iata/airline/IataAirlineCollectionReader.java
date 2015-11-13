@@ -31,30 +31,65 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 		String code = null;
 		String name = null;
 		String country = null;
-		LinkedList airlines = new LinkedList();
+		LinkedList<IataAirline> airlines = new LinkedList<IataAirline>();
 
 		scanner.findWithinHorizon("<th>Bemerkung</th>", 0);
+		scanner.nextLine();
+		scanner.nextLine();
+		scanner.nextLine();
+
 		Matcher matcher = null;
+		String line = "";
 
-		String data = scanner.findWithinHorizon(Pattern.compile("<tr>"), 0);
-		String line = scanner.nextLine();
+		while (!line.matches("</table>")) {
+			line = scanner.nextLine();
+			matcher = Pattern.compile("<td>(..).*</td>").matcher(line);
+			if (matcher.matches())
+				code = matcher.group(1);
+			else {
+				System.out.println("code: " + line);
+				break;
+			}
 
-//		while (!line.equals("</tr>")) {
-//			System.out.println(line);
-//			matcher = Pattern.compile("<td>([A-Z]{2}).*?</td>").matcher(line);
-//			if (matcher.matches()){
-//				code = matcher.group(1);
-//				System.out.println(code);
-//			} else
-//				System.out.println("no match!");
-//			name = "name";
-//			country = "country";
-//			airlines.add(new IataAirline(code, name, country));
-//			line = scanner.nextLine();
-//		}
+			line = scanner.nextLine();
+			matcher = Pattern.compile("<td>.*?>(.*)</a>.*</td>").matcher(line);
+			if (matcher.matches())
+				name = matcher.group(1);
+			else {
+				matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
+				if (matcher.matches())
+					name = matcher.group(1);
+				else {
+					System.out.println("name: " + line);
+					break;
+				}
+			}
+
+			line = scanner.nextLine();
+			matcher = Pattern.compile("<td>.*title=\"(.*?)\".*.*</td>")
+					.matcher(line);
+			if (matcher.matches())
+				country = matcher.group(1);
+			else {
+				matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
+				if (matcher.matches())
+					country = matcher.group(1);
+				else {
+					System.out.println("country: " + line);
+					break;
+				}
+			}
+
+			line = scanner.nextLine(); // Bemerkung
+			if (!line.matches("</tr>"))
+				scanner.nextLine();
+
+			airlines.add(new IataAirline(code, name, country));
+
+			line = scanner.nextLine(); // <tr>
+		}
 
 		scanner.close();
 		return airlines;
 	}
-
 }
