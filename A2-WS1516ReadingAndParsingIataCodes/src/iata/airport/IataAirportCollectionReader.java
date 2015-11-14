@@ -2,7 +2,6 @@ package iata.airport;
 
 import iata.AbstractIataCollectionReader;
 import iata.Iata;
-import iata.airline.IataAirline;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,17 +13,78 @@ import java.util.regex.Pattern;
 
 public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
+	private IataAirport getAirport(Scanner scanner) {
+		IataAirport airport = null;
+
+		String code = null;
+		String name = null;
+		String country = null;
+
+		Matcher matcher = null;
+		String line = "";
+
+		scanner.nextLine(); // <tr>
+
+		line = scanner.nextLine(); // Code
+		matcher = Pattern.compile("<td>(...)</td>").matcher(line);
+		if (matcher.matches())
+			code = matcher.group(1);
+		else {
+			System.out.println("code: " + line);
+		}
+
+		scanner.nextLine(); // zweiter code
+
+		line = scanner.nextLine(); // Name
+		matcher = Pattern.compile("<td>.*?>(.*)</a>.*</td>").matcher(line);
+		if (matcher.matches())
+			name = matcher.group(1);
+		else {
+			matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
+			if (matcher.matches())
+				name = matcher.group(1);
+			else {
+				System.out.println("name: " + line);
+			}
+		}
+
+		scanner.nextLine(); // Ort
+
+		scanner.nextLine(); // Region
+
+		line = scanner.nextLine(); // Land
+		matcher = Pattern.compile("<td>.*title=\"(.*?)\".*.*</td>").matcher(
+				line);
+		if (matcher.matches())
+			country = matcher.group(1);
+		else {
+			matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
+			if (matcher.matches())
+				country = matcher.group(1);
+			else {
+				System.out.println("country: " + line);
+			}
+		}
+
+		scanner.nextLine(); // </tr>
+
+		if (code != null && name != null && country != null)
+			airport = new IataAirport(code, name, country);
+
+		return airport;
+	}
+
 	public Collection<? extends Iata> readLocalCollection() {
-		Collection<? extends Iata> airports = new LinkedList<IataAirport>();
-		Collection<? extends Iata> a;
+		Collection<IataAirport> airports = new LinkedList<IataAirport>();
+		Collection<IataAirport> a;
 
 		URL url = null;
-		for (int i = 0; i < 26; i++) {
-			//url = getClass().getResource((char) (65 + i) + ".htm");
-			url = getClass().getResource("A.htm");
-			a = readSingleCollection(url);
-			airports = a;
+		for (int i = 0; i < 1; i++) { // TODO i < 26
+			url = getClass().getResource((char) (65 + i) + ".htm");
+			a = (Collection<IataAirport>) readSingleCollection(url);
+			airports.addAll(a);
 		}
+
 		return airports;
 	}
 
@@ -39,86 +99,24 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 			e.printStackTrace();
 		}
 
-		String code = null;
-		String name = null;
-		String country = null;
 		LinkedList<IataAirport> airports = new LinkedList<IataAirport>();
 
 		scanner.findWithinHorizon("<th style=\"width:17%;\">Land</th>", 0);
 		scanner.nextLine();
 		scanner.nextLine();
-		scanner.nextLine();
 
-//		for(int i = 0; i < 1; i++)
-//			System.out.println(scanner.nextLine());
-		
-		Matcher matcher = null;
-		String line = "";
+		// for(int i = 0; i < 1; i++)
+		// System.out.println(scanner.nextLine());
 
-//		<tr>
-//		<td>AAA</td>
-//		<td>NTGA</td>
-//		<td><a href="/wiki/Flughafen_Anaa" title="Flughafen Anaa">Flughafen Anaa</a></td>
-//		<td><a href="/wiki/Anaa_(Gemeinde)" title="Anaa (Gemeinde)">Anaa</a></td>
-//		<td><a href="/wiki/Tuamotu-Archipel" title="Tuamotu-Archipel">Tuamotu-Archipel</a></td>
-//		<td><a href="/wiki/Franz%C3%B6sisch-Polynesien" title="Französisch-Polynesien">Französisch-Polynesien</a></td>
-//		</tr>
-		
-		while (!line.matches("</table>")) {
-			
-			line = scanner.nextLine(); // Code
-			matcher = Pattern.compile("<td>(...)</td>").matcher(line);
-			if (matcher.matches())
-				code = matcher.group(1);
-			else {
-				System.out.println("code: " + line);
+		IataAirport airport = null;
+
+		do {
+			airport = getAirport(scanner);
+			if (airport != null)
+				airports.add(airport);
+			else
 				break;
-			}
-
-			scanner.nextLine(); // zweiter code
-			
-			line = scanner.nextLine(); // Name
-			matcher = Pattern.compile("<td>.*?>(.*)</a>.*</td>").matcher(line);
-			if (matcher.matches())
-				name = matcher.group(1);
-			else {
-				matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
-				if (matcher.matches())
-					name = matcher.group(1);
-				else {
-					System.out.println("name: " + line);
-					break;
-				}
-			}
-
-			scanner.nextLine(); // Ort
-			
-			scanner.nextLine(); // Region
-			
-			line = scanner.nextLine(); // Land
-			matcher = Pattern.compile("<td>.*title=\"(.*?)\".*.*</td>")
-					.matcher(line);
-			if (matcher.matches())
-				country = matcher.group(1);
-			else {
-				matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
-				if (matcher.matches())
-					country = matcher.group(1);
-				else {
-					System.out.println("country: " + line);
-					break;
-				}
-			}
-
-//			line = scanner.nextLine();
-//			if (!line.matches("</tr>"))
-//				scanner.nextLine();
-
-			airports.add(new IataAirport(code, name, country));
-
-			scanner.nextLine(); // </tr>
-			line = scanner.nextLine(); // <tr>
-		}
+		} while (airport != null);
 
 		scanner.close();
 		return airports;
