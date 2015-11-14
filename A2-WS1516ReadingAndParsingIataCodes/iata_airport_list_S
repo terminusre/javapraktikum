@@ -1,26 +1,280 @@
-SAA::Vereinigte Staaten
 SAB:Juancho E. Yrausquin Airport:Niederlande
-SAC:California Executive Airport:Vereinigte Staaten
-SAD:Municipal Airport:Vereinigte Staaten
-SAE::Indonesien
-SAF:County Municipal Airport:Vereinigte Staaten
-SAG:Sagwon Airport:Vereinigte Staaten
+SAC:California Executive Airport:USA
+SAD:Municipal Airport:USA
+SAF:County Municipal Airport:USA
+SAG:Sagwon Airport:USA
 SAH:Flughafen Sanaa:Jemen
-SAI::San Marino
-SAJ::Bangladesch
-SAK::Island
 SAL:Flughafen San Salvador:El Salvador
-SAM::Papua-Neuguinea
-SAN:San Diego (Lindbergh Field):Vereinigte Staaten
-SAO:<i>Sao Paolo Metropolitan Area</i> (CGH, GRU, VCP):Brasilien
-SAP::Honduras
-SAQ::Bahamas
-SAR::Vereinigte Staaten
-SAS::Vereinigte Staaten
-SAT:Flughafen San Antonio:Vereinigte Staaten
-SAU::Indonesien
-SAV::Vereinigte Staaten
+SAN:San Diego (Lindbergh Field):USA
+SAO:Sao Paolo Metropolitan Area (CGH, GRU, VCP):Brasilien
+SAT:Flughafen San Antonio:USA
 SAW:Sabiha Gökçen International Airport:Türkei
-SAX::Panama
 SAY:Flughafen Siena:Italien
-SAZ::Liberia
+SBA:Municipal Airport:USA
+SBD:Int'l Airport:USA
+SBH:Flughafen St. Barth:Guadeloupe
+SBK:Flughafen Saint Brieuc–Armor:Frankreich
+SBM:Sheboygan County Memorial Airport:USA
+SBN:South Bend Airport:USA
+SBO:Gunnison Airport:USA
+SBT:County Heliport:USA
+SBX:Shelby Airport:USA
+SBY:Wicomico County:USA
+SBZ:Aeroportul Internațional Sibiu:Rumänien
+SCB:Scribner State Airport:USA
+SCC:Deadhorse Airport:USA
+SCF:Scottsdale Airport:USA
+SCH:Schenectady County Airport:USA
+SCK:Stockton Metropolitan Airport:USA
+SCL:Santiago - Arturo Merino Benitez:Chile
+SCM:Scammon Bay Seaplane Base:USA
+SCN:Flughafen Saarbrücken-Ensheim:Deutschland
+SCO:Flughafen Aqtau:Kasachstan
+SCQ:Flughafen Santiago de Compostela:Spanien
+SCR:Scranton Municipal Airport:USA
+SCS:Scatsta Airport:Großbritannien
+SCU:Flughafen Santiago de Cuba:Kuba
+SDA:vormals für Saddam International Airport, jetzt <b>BGW</b>:Irak
+SDF:Flughafen Louisville:USA
+SDJ:Flughafen Sendai:Japan
+SDK:Flughafen Sandakan:Malaysia
+SDM:Brown Field Municipal:USA
+SDN:Flughafen Sandane (Anda):Norwegen
+SDP:Sand Point Airport:USA
+SDQ:Flughafen Las Américas:Dominikanische Republik
+SDR:Flughafen Santander:Spanien
+SDU:Flughafen Rio de Janeiro-Santos Dumont:Brasilien
+SDV:Flughafen Sde-Dov:Israel
+SDY:Sidney-Richland Municipal Airport:USA
+SDZ:Sammelcode für Shetlandinseln (LWK, LSI, SCS):Großbritannien
+SEA:Seattle-Tacoma International:USA
+SEE:Gillespie Field:USA
+SEF:Sebring Regional Airport:USA
+SEG:Penn Valley Airport:USA
+SEL:Grossraum Seoul (GMP, ICN, SSN):Südkorea
+SEM:Craig Field:USA
+SEN:London Southend Airport:Großbritannien
+SEP:Stephenville (Clark Field):USA
+SEQ:Sei Pakning:Indonesien
+SER:Freeman Municipal Airport:USA
+SES:Selma (Selfield):USA
+SEX:Sembach Air Base (stillgelegt):<td>Deutschland
+SEZ:Flughafen Seychellen:Seychellen
+SFA:Sfax-Thyna International:Tunesien
+SFB:Orlando Sanford International Airport:USA
+SFF:Spokane (Felts Field):USA
+SFG:Saint Martin - Esperance:Französische Überseegebiete
+SFM:Sanford Municipal Airport:USA
+SFO:Flughafen San Francisco:USA
+SFY:Grossraum Springfield (BDL, CEF):USA
+SGC:Flughafen Surgut:Russland
+SGD:Flughafen Sønderborg:Dänemark
+SGE:Siegerlandflughafen:Deutschland
+SGF:Springfield Regional Airport:USA
+SGH:Springfield-Beckley Municipal Airport:USA
+SGL:Sangley Point:Philippinen
+SGM:San Ignacio Airfield:Mexiko
+SGN:Tân Sơn Nhứt:Vietnam
+SGR:Hull Field:USA
+SGS:Sanga Sanga:Philippinen
+SGT:Stuttgart Municipal Airport:USA
+SGU:St. George Municipal Airport:USA
+SGW:Saginaw (Harry W. Browne Airport):USA
+SGY:Skagway Airport:USA
+SHA:Flughafen Shanghai-Hongqiao:Volksrepublik China
+SHB:Flughafen Nakashibetsu:Japan
+SHD:Shenandoah Valley:USA
+SHG:Shungnak Airport:USA
+SHH:Shishmaref Airport:USA
+SHI:Flughafen Shimoji-shima:Japan
+SHJ:Flughafen Schardscha:Vereinigte Arabische Emirate
+SHN:Shelton - Sanderson Field:USA
+SHQ:Southport:USA
+SHR:Sheridan County Airport:USA
+SHV:Shreveport Regional Airport:USA
+SHX:Shageluk Airport:USA
+SIA:Xiguan Airport:China
+SIC:Flughafen Sinop:Türkei
+SID:Amílcar Cabral International Airport:Kap Verde
+SIG:Ferdinando Luis Ribas:Puerto Rico
+SIK:Municipal Airport:USA
+SIN:Singapur - Changi International Airport:Singapur
+SIP:Internationaler Flughafen Simferopol:Ukraine
+SIQ:Dabo Airport:Indonesien
+SIR:Flughafen Sion:Schweiz
+SIT:Sitka Airport:USA
+SIV:Sullivan County Airport:USA
+SIY:Siskiyou County Airport:USA
+SJC:San Jose International Airport:USA
+SJD:San Jose del Cabo:Mexiko
+SJF:Cruz Bay:Amerikanische Jungferninseln
+SJJ:Flughafen Sarajevo:Bosnien und Herzegowina
+SJN:Industrial Air Park:USA
+SJO:Juan Santamaria:Costa Rica
+SJT:Mathis Field:USA
+SJU:San Juan - Luis Muñoz Marín:Puerto Rico
+SJY:Flughafen Seinäjoki:Finnland
+SJZ:Flughafen São Jorge:Portugal
+SKA:Fairchild Air Force Base:USA
+SKB:Golden Rock:St. Kitts und Nevis
+SKE:Flughafen Skien:Norwegen
+SKF:Lackland Air Force Base:USA
+SKG:Flughafen Thessaloniki:Griechenland
+SKK:Shaktoolik Airport:USA
+SKN:Flughafen Stokmarknes, Skagen:Norwegen
+SKP:Flughafen Skopje:Mazedonien
+SKS:Militärflugplatz Skrydstrup:Dänemark
+SKW:Skwentna Airport:USA
+SKY:Griffing Sandusky Airport:USA
+SLB:Storm Lake Municipal Airport:USA
+SLC:Salt Lake City International Airport:USA
+SLD:Flughafen Sliač:Slowakei
+SLE:McNary Field:USA
+SLG:Smith Field:USA
+SLK:Adirondack Airport:USA
+SLL:Flughafen Salala:Oman
+SLM:Flughafen Salamanca:Spanien
+SLN:Salina Municipal Airport:USA
+SLO:Salem-Leckrone Airport:USA
+SLQ:Sleetmute Airport:USA
+SLR:Sulphur Springs Municipal Airport:USA
+SLT:Harriet Alexander Field:USA
+SLZ:Marechal Cunha Machado International Airport:Brasilien
+SMA:Flughafen Santa Maria:Portugal
+SMD:Smith Field:USA
+SMF:Flughafen Sacramento:USA
+SMI:Flughafen Samos-Aristarchos:Griechenland
+SMK:St. Michael Airport:USA
+SMM:Flughafen Semporna:Malaysia
+SMN:Lehmi County Airport:USA
+SMO:Municipal Airport:USA
+SMR:Simon Bolivar:Kolumbien
+SMU:Sheep Mountain Airport:USA
+SMV:Flughafen Engadin:Schweiz
+SMX:Santa Maria Public Airport:USA
+SNA:John Wayne Airport:USA
+SNC:General Ulpiano Paez:Ecuador
+SNK:Winston Field:USA
+SNL:Shawnee Municipal Airport:USA
+SNN:Flughafen Shannon:Republik Irland
+SNP:Flughafen Sankt-Paul-Insel:USA
+SNS:Salinas Municipal Airport:USA
+SNY:Sidney Municipal Airport:USA
+SOB:Flughafen Balaton:Ungarn
+SOC:Adisumarmo International Airport:Indonesien
+SOF:Flughafen Sofia:Bulgarien
+SOJ:Flughafen Sørkjosen:Norwegen
+SOL:Solomon State Field:Vereinigte Staaten
+SOT:Flughafen Sodankylä:Finnland
+SOU:Southampton International Airport:Vereinigtes Königreich
+SOV:Seldovia Airport:USA
+SOW:Show Low Municipal Airport:Vereinigte Staaten
+SOZ:Flughafen Solenzara:Frankreich
+SPA:Downtown Memorial:USA
+SPC:Flughafen Santa Cruz de La Palma:Spanien
+SPF:Black Hills Airport:USA
+SPG:Albert Whitted Airport:USA
+SPI:Capital Airport:USA
+SPK:Sapporo, Metropolitan Area (CTX, OKD):Japan
+SPL:Amsterdam (Schiphol), inzwischen Bahnhof Schiphol:Niederlande
+SPM:Spangdahlem Air Base:Deutschland
+SPN:Saipan International Airport:Marianen
+SPQ:Catalina Sea Plane Base:USA
+SPR:Ambregris Caye:Belize
+SPS:Sheppard Air Force Base:USA
+SPU:Split-Kaštela:Kroatien
+SPW:Spencer Municipal Airport:USA
+SPX:Spaceland:USA
+SPZ:Springdale Municipal Airport:USA
+SQI:Whiteside County:Vereinigte Staaten
+SQL:San Carlos Airport:Vereinigte Staaten
+SQQ:Flughafen Šiauliai:Litauen
+SQV:Grand View International Airport:Vereinigte Staaten
+SQZ:RAF Station:Vereinigtes Königreich
+SRC:Searcy Municipal Airport:USA
+SRE:Sucre - Juana Azurduy de Padilla:Bolivien
+SRQ:Sarasota-Bradenton Airport:USA
+SRW:Rowan County Airport:USA
+SRX:Flughafen Gardabya:Libyen
+SRZ:Santa Cruz - El Trompillo:Bolivien
+SSA:Flughafen Salvador-Magalhães:Brasilien
+SSC:Shaw Air Force Base:USA
+SSF:Stinson Municipal Airport:USA
+SSG:Flughafen Malabo:Äquatorialguinea
+SSH:Flughafen Scharm El-Scheich:Ägypten
+SSI:Malcolm McKinnon Airport:USA
+SSJ:Flughafen Sandnessjøen, Stokka:Norwegen
+SSM:Sanderson Field:USA
+SSN:Seoul Air Base:Südkorea
+SSQ:La Sarre Aerodrome:Kanada
+SSW:Stuart Island Airpark:USA
+STC:St. Cloud Municipal Airport:USA
+STE:Stevens Point Municipal Airport:USA
+STI:Flughafen Cibao:Dominikanische Republik
+STK:Crosson Field:USA
+STL:St. Louis International Airport:USA
+STN:Flughafen London-Stansted:Großbritannien
+STO:Metropolitan Area:Schweden
+STP:Holman Field:USA
+STQ:St. Marys Municipal Airport:USA
+STR:Flughafen Stuttgart:Deutschland
+STS:Sonoma County:USA
+STT:Cyril E. King Airport:Amerikanische Jungferninseln
+STY:Aeropuerto Departamental de Salto:Uruguay
+SUA:Witham Field:USA
+SUB:Surabaya Juanda International:Indonesien
+SUC:Schloredt Airport:USA
+SUD:Stroud Municipal Airport:USA
+SUE:Door County:USA
+SUM:Sumter Municipal Airport:USA
+SUN:Hailey:USA
+SUS:Spirit of St. Louis Airport:USA
+SUU:Travis Air Force Base:USA
+SUV:Nausori International:Fidschi
+SUW:Richard I. Bong Airport:USA
+SUX:Sioux Gateway Airport:USA
+SVA:Savoonga Airport:USA
+SVC:Grant County Airport:USA
+SVE:Susanville Municipal Airport:USA
+SVG:Flughafen Stavanger:Norwegen
+SVH:Statesville Municipal Airport:USA
+SVJ:Flughafen Svolvær, Helle:Norwegen
+SVL:Flughafen Savonlinna:Finnland
+SVN:Hunter Army Air Field:USA
+SVO:Flughafen Moskau-Scheremetjewo:Russland
+SVS:Stevens Village Airport:USA
+SVX:Koltsovo:Russland
+SWD:Seward Airport:USA
+SWF:Stewart International Airport:USA
+SWO:Stillwater Municipal Airport:USA
+SWP:Flughafen Swakopmund:Namibia
+SWW:Avenger Field:USA
+SWX:Flugplatz Shakawe:Botswana
+SXC:Catalina Island:USA
+SXD:Heliport:Frankreich
+SXE:West Sale Airport:Australien
+SXF:Flughafen Berlin-Schönefeld:Deutschland
+SXJ:Shanshan Airport:Volksrepublik China
+SXM:Princess Juliana Airport:Niederländische Antillen
+SXP:Sheldon Point Airport:USA
+SXQ:Soldotna Airport:USA
+SXW:Saurem Airport:Papua-Neuguinea
+SXY:Sidney Municipal Airport:USA
+SYA:Air Force Base:USA
+SYD:Kingsford Smith International Airport:Australien
+SYF:Silva Bay Airplane Base:Kanada
+SYI:Bomar Field-Shelbyville Municipal Airport:USA
+SYL:San Miguel:USA
+SYN:Stanton Airfield:USA
+SYR:Hancock Int'l Airport:USA
+SYV:Sylvester Airport:USA
+SYX:Flughafen Sanya:China
+SZB:Sultan Abdul Aziz Shah Airport:Malaysia
+SZG:Flughafen Salzburg:Österreich
+SZL:Whiteman Air Force Base:USA
+SZN:Santa Cruz Island:USA
+SZP:Santa Paula Airport:USA
+SZW:Flughafen Schwerin-Parchim:Deutschland
+SZX:Shenzhen Baoan International Airport:China
+SZY:Flughafen Szczytno-Szymany:Polen
+SZZ:Flughafen Stettin-Goleniów:Polen

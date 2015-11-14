@@ -42,7 +42,7 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 		String line = "";
 
 		while (!line.matches("</table>")) {
-			line = scanner.nextLine();
+			line = scanner.nextLine(); // code
 			matcher = Pattern.compile("<td>(..).*</td>").matcher(line);
 			if (matcher.matches())
 				code = matcher.group(1);
@@ -51,8 +51,8 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 				break;
 			}
 
-			line = scanner.nextLine();
-			matcher = Pattern.compile("<td>.*?>(.*)</a>.*</td>").matcher(line);
+			line = scanner.nextLine(); // name
+			matcher = Pattern.compile("<td><a.*?>(.*)</a>.*</td>").matcher(line);
 			if (matcher.matches())
 				name = matcher.group(1);
 			else {
@@ -65,8 +65,8 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 				}
 			}
 
-			line = scanner.nextLine();
-			matcher = Pattern.compile("<td>.*title=\"(.*?)\".*.*</td>")
+			line = scanner.nextLine();  // country
+			matcher = Pattern.compile("<td><a.*?>(.*)</a>.*</td>")
 					.matcher(line);
 			if (matcher.matches())
 				country = matcher.group(1);
