@@ -19,12 +19,12 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 		Collection<IataAirport> airports = new LinkedList<IataAirport>();
 		Collection<IataAirport> a;
 
-//		URL url = null;
-//		for (int i = 0; i < 26; i++) {
-//			url = getClass().getResource((char) (65 + i) + ".htm");
-//			a = (Collection<IataAirport>) readSingleCollection(url);
-//			airports.addAll(a);
-//		}
+		URL url = null;
+		for (int i = 0; i < 26; i++) {
+			url = getClass().getResource((char) (65 + i) + ".htm");
+			a = (Collection<IataAirport>) readSingleCollection(url);
+			airports.addAll(a);
+		}
 
 		return airports;
 	}

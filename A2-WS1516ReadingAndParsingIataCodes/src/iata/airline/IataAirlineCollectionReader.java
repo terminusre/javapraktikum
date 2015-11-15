@@ -13,16 +13,37 @@ import java.util.regex.Pattern;
 
 public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 
+	Scanner scanner = null;
+	Matcher matcher = null;
+
 	public Collection<? extends Iata> readLocalCollection() {
 		return readSingleCollection(getClass().getResource("iata_airline.htm"));
 	}
 
+	private Boolean forward_to_next_element() {
+		if (null == scanner.findWithinHorizon("<tr>", 0))
+			return false;
+		scanner.nextLine();
+		return true;
+	}
+
+	private String process_String(String string) {
+		matcher = Pattern.compile("<td><a.*?>(.*)</a>.*</td>").matcher(string);
+		if (matcher.matches())
+			return matcher.group(1);
+		else {
+			matcher = Pattern.compile("<td>(.*)</td>").matcher(string);
+			if (matcher.matches())
+				return matcher.group(1);
+		}
+		System.out.println("Error at " + string);
+		return null;
+	}
+
 	protected Collection<? extends Iata> readSingleCollection(URL url) {
 
-		Scanner scanner = null;
-
 		try {
-			scanner = new Scanner(url.openStream(), "UTF-8");
+			this.scanner = new Scanner(url.openStream(), "UTF-8");
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -33,15 +54,19 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 		String country = null;
 		LinkedList<IataAirline> airlines = new LinkedList<IataAirline>();
 
-		scanner.findWithinHorizon("<th>Bemerkung</th>", 0);
-		scanner.nextLine();
-		scanner.nextLine();
-		scanner.nextLine();
+		String line = null;
 
-		Matcher matcher = null;
-		String line = "";
+		Boolean next_element_exists = forward_to_next_element();
 
-		while (!line.matches("</table>")) {
+		forward_to_next_element();
+		next_element_exists = forward_to_next_element();
+
+		while (next_element_exists) {
+
+			code = null;
+			name = null;
+			country = null;
+
 			line = scanner.nextLine(); // code
 			matcher = Pattern.compile("<td>(..).*</td>").matcher(line);
 			if (matcher.matches())
@@ -52,41 +77,16 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 			}
 
 			line = scanner.nextLine(); // name
-			matcher = Pattern.compile("<td><a.*?>(.*)</a>.*</td>").matcher(line);
-			if (matcher.matches())
-				name = matcher.group(1);
-			else {
-				matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
-				if (matcher.matches())
-					name = matcher.group(1);
-				else {
-					System.out.println("name: " + line);
-					break;
-				}
-			}
+			name = process_String(line);
 
-			line = scanner.nextLine();  // country
-			matcher = Pattern.compile("<td><a.*?>(.*)</a>.*</td>")
-					.matcher(line);
-			if (matcher.matches())
-				country = matcher.group(1);
-			else {
-				matcher = Pattern.compile("<td>(.*)</td>").matcher(line);
-				if (matcher.matches())
-					country = matcher.group(1);
-				else {
-					System.out.println("country: " + line);
-					break;
-				}
-			}
+			line = scanner.nextLine(); // country
+			country = process_String(line);
 
-			line = scanner.nextLine(); // Bemerkung
-			if (!line.matches("</tr>"))
-				scanner.nextLine();
+			if (code != null && name != null && country != null)
+				airlines.add(new IataAirline(code, name, country));
 
-			airlines.add(new IataAirline(code, name, country));
+			next_element_exists = forward_to_next_element();
 
-			line = scanner.nextLine(); // <tr>
 		}
 
 		scanner.close();

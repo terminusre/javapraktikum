@@ -1,5 +1,4 @@
 0D:Darwin Airline:Schweiz
-0J:JetClub:Schweiz
 1A:Amadeus Global Travel Distribution:Spanien
 1B:Abacus International:Singapur
 1C:EDS Information Business:Schweiz
@@ -15,14 +14,12 @@
 1J:Axess international:Japan
 1K:Sutra:USA
 1K:Southern Cross Distribution:Australien
-1L:OpenSkies:Vereinigtes Königreich
 1M:JSC Transport Automated Information Systems:Russland
 1N:Navitaire:USA
 1P:WorldSpan:USA
 1Q:Sirena:Russland
 1R:Hainan Phoenix Information Systems:China
 1S:Sabre:USA
-1T:1time:Südafrika
 1T:PT Aerosystems Indonesia:Indonesien
 1U:Polyot Sirena:Russland
 1V:Galileo International:USA
@@ -34,7 +31,6 @@
 2E:Smokey Bay Air:USA
 2F:Payam Air:Iran
 2J:Air Burkina:Burkina Faso
-2K:AeroGal:Ecuador
 2L:LAER:Argentinien
 2L:Helvetic Airways:Schweiz
 2M:Moldavian Airlines:Moldawien
@@ -43,11 +39,9 @@
 2Q:Air Cargo Carriers:USA
 2R:Star Airlines:Frankreich
 2S:Island Express:USA
-2U:Sun d’Or International Airlines:Israel
 2W:Welcome Air:Österreich
 2Z:Air Plus Comet:Spanien
 2Z:Chang An Airlines:China
-3B:Central Connect Airlines:Tschechien
 3C:Corporate Airlines:USA
 3D:Denim Air:Niederlande
 3E:Air Bretagne:Frankreich
@@ -60,7 +54,6 @@
 3M:Gulfstream International Airlines:USA
 3N:Air Urga:Ukraine
 3P:Tiara Air:Aruba
-3Q:China Yunnan Airlines:China
 3R:Air Avia:Aruba
 3S:Aerologic:Deutschland
 3T:Turan Air:Aserbaidschan
@@ -71,7 +64,6 @@
 3Z:Everts Air:USA
 3Z:Necon Air:Nepal
 4A:Air Kiribati:Kiribati
-4A:Air Go Airlines:Griechenland
 4B:Olson Air Service:USA
 4B:Perimeter Airlines:Kanada
 4C:AIRES:Kolumbien
@@ -90,10 +82,8 @@
 4Q:Air Italy Polska:Polen
 4Q:Safi Airways:Afghanistan
 4R:Orient Eagle Airways:Kasachstan
-4T:Belair Airlines AG:Schweiz
 4U:Germanwings:Deutschland
 4U:Tavaj Linhas Aereas:Brasilien
-4V:Birdy Airlines:Belgien
 4V:Voyageur Airways:Kanada
 4W:Warbelow’s Air Ventures:USA
 4Y:Flight Alaska:USA
@@ -103,7 +93,6 @@
 5C:Air Tahoma:USA
 5E:CAL Cargo Airlines:Israel
 5D:Aerolitoral S.A.:Mexiko
-5D:Dutchbird:Niederlande
 5E:Base Airlines:Niederlande
 5F:Arctic Circle Air Service:USA
 5G:Skyservice Airlines:Kanada
@@ -116,23 +105,17 @@
 5P:Skyeurope Hungary:Ungarn
 5Q:BQB Lineas Aereas:Uruguay
 5Q:Euroceltic Airways:Vereinigtes Königreich
-5R:Karthago Airlines:Tunesien
 5R:IRS Aero:Russland
 5S:L’Aeropostale:Frankreich
 5S:SAP:Dominikanische Republik
 5T:Canadian North:Kanada
-5T:Transwede Airways:Schweden
 5U:LADE:Argentinien
 5V:Lviv Airlines:Ukraine
-5W:Astraeus:Vereinigtes Königreich
 5X:UPS Airlines:USA
 5Y:Atlas Air:USA
 5Y:Isles of Scilly Sky Bus:Vereinigtes Königreich
 5Z:Airfreight Express:Vereinigtes Königreich
 6A:Aviacsa:Mexiko
-6B:Blue Scandinavia:Schweden
-6B:Britannia Airways AB:Schweden
-6B:Thomsonfly AB:Schweden
 6B:TUIfly Nordic:Schweden
 6C:Cape Smythe Air Service:USA
 6D:Pelita Air:Indonesien
@@ -160,7 +143,6 @@
 7E:Sylt Air GmbH:Deutschland
 7F:First Air:Kanada
 7G:Bellair:USA
-7G:MK Airlines:Ghana
 7G:StarFlyer:Japan
 7H:ERA Aviation:USA
 7J:Skagway Air Service:USA
@@ -242,35 +224,27 @@ A5:Airlinair:Frankreich
 A5:Hop!:Frankreich
 A5:Tikal Jets:Guatemala
 A6:Air Alps:Österreich
-A7:Air Plus Comet:Spanien
 A7:Air Niamey:Niger
-A8:Aerolíneas Paraguayas:Paraguay
 A8:Benin Gulf Air:Benin
 A9:Airzena:Georgien
 AA:American Airlines:USA
 AB:Air Berlin:Deutschland
 AC:Air Canada:Kanada
-AD:Air Paradise:Indonesien
 AD:Avialeasing:Usbekistan
 AD:Azul:Brasilien
-AE:Air Ceylon:Sri Lanka
 AE:Mandarin Airlines:Taiwan
 AE:Iceland Express:Island
 AF:Air France:Frankreich
 AG:Air Contractors:Irland
 AH:Air Algérie:Algerien
 AI:Air India:Indien
-AJ:Air Belgium:Belgien
 AK:Air Asia:Malaysia
 AL:Skyway Airlines:USA
 AL:Trans Avia Export:Weißrussland
 AM:Aeroméxico:Mexiko
 AN:Ándalus Lineas Aéreas:Spanien
-AO:Aviaco:Spanien
 AO:AviaNova:Russland
 AO:Australian Airlines:Australien
-AP:Air One:Italien
-AQ:Aloha Airlines:USA
 AR:Aerolíneas Argentinas:Argentinien
 AS:Alaska Airlines:USA
 AT:Royal Air Maroc:Marokko
@@ -295,43 +269,31 @@ B8:Eritrean Airlines:Eritrea
 B9:Air Bangladesh:Bangladesch
 B9:Iran Airtour:Iran
 BA:British Airways:Vereinigtes Königreich
-BA:British Overseas Airways Corporation:Vereinigtes Königreich
 BB:Seaborne Airlines:Puerto Rico
 BC:Skymark Airlines:Japan
 BD:British Midland Airways / bmi:Vereinigtes Königreich
-BE:British European Airways:Vereinigtes Königreich
 BE:Flybe:Vereinigtes Königreich
-BE:Jersey European Airways:Vereinigtes Königreich
 BF:Bluebird Cargo:Island
 BF:Aero Service:Republik Kongo
 BG:Biman Bangladesh Airlines:Bangladesch
 BH:Hawkair:Kanada
 BI:Royal Brunei Airlines:Brunei
 BJ:Nouvelair:Tunesien
-BK:BKS Air Transport:Vereinigtes Königreich
 BK:Potomac Air:USA
 BL:JetstarPacific:Vietnam
 BM:Air Sicilia:Italien
 BM:Bayu Indonesia:Indonesien
 BP:Air Botswana:Botswana
 BQ:Aeromar Airlines:Dominikanische Republik
-BR:British Caledonian Airways:Vereinigtes Königreich
-BR:British United Airways:Vereinigtes Königreich
 BR:EVA Air:Taiwan
 BS:British International Helicopters:Vereinigtes Königreich
-BS:Busy Bee of Norway:Norwegen
 BS:CHC Scotia:Vereinigtes Königreich
 BT:AirBaltic:Lettland
-BU:Braathens:Norwegen
-BU:SAS Norge:Norwegen
 BV:Blue Panorama Airlines:Italien
 BW:BWIA British West Indies Airways:Trinidad und Tobago
-BY:Britannia Airways:Vereinigtes Königreich
-BY:Thomsonfly:Vereinigtes Königreich
 BY:Thomson Airways:Vereinigtes Königreich
 BZ:Blue Dart Aviation:Indien
 BZ:Keystone Air Services:Kanada
-C3:Contact Air:Deutschland
 C4:Zimex Aviation:Schweiz
 C5:Commutair:USA
 C6:CanJet Airlines:Kanada
@@ -358,13 +320,8 @@ CL:Lufthansa CityLine:Deutschland
 CM:COPA Airlines:Panama
 CN:Westward Airways:USA
 CN:Islands Nationair:Papua-Neuguinea
-CP:Canadian Airlines International:Kanada
-CP:Canadian Pacific Air Lines:Kanada
-CP:CP Air:Kanada
 CQ:Sunshine Express Airlines:Australien
 CR:OAG Worldwide:Vereinigtes Königreich
-CS:Cambrian Airways:Vereinigtes Königreich
-CS:Continental Micronesia:USA
 CT:Alitalia CityLiner:Italien
 CU:Cubana:Kuba
 CV:Air Chatams:Neuseeland
@@ -387,12 +344,10 @@ D8:Djibouti Airlines:Djibouti
 D9:Aeroflot-Don:Russland
 D9:Donavia:Russland
 DA:Daily Air Corporation:Taiwan
-DA:Dan-Air:Vereinigtes Königreich
 DA:Air Georgia:Georgien
 DB:Brit Air:Frankreich
 DC:Sverigeflyg:Schweden
 DD:Atlantic Coast Jet:USA
-DD:Conti-Flug:Deutschland
 DD:Nok Air:Thailand
 DE:Prime Air:Kanada
 DE:Condor Flugdienst:Deutschland
@@ -400,15 +355,9 @@ DF:AeBal:Spanien
 DG:Custom Air Transport:USA
 DH:Atlantic Coast Airlines:USA
 DH:DHL Aviation:Belgien
-DI:Deutsche BA:Deutschland
-DJ:Nordic European Airlines:Schweden
 DJ:Virgin Australia:Australien
-DK:Scanair:Schweden
-DK:Premiair:Dänemark
-DK:MyTravel Airways:Dänemark
 DK:Thomas Cook Airlines Scandinavia:Dänemark
 DL:Delta Air Lines:USA
-DM:Maersk Airlines:Dänemark
 DN:Air Exel Belgique:Belgien
 DN:Sénégal Airlines:Senegal
 DO:Air Vallee:Italien
@@ -446,12 +395,10 @@ EC:Avialeasing Aviation:Usbekistan
 EC:Heli-Inter:Frankreich
 ED:Airblue:Pakistan
 ED:CCAir:USA
-EG:British Eagle International Airlines:Vereinigtes Königreich
 EG:Japan Asia Airways:Japan
 EH:Air Nippon:Japan
 EH:SAETA:Ecuador
 EI:Aer Lingus:Irland
-EJ:Air Atlantis:Portugal
 EJ:New England Airlines:USA
 EK:Emirates:Vereinigte Arabische Emirate
 EL:Air Nippon:Japan
@@ -459,17 +406,13 @@ EM:AeroBenin:Benin
 EM:Empire Airlines:USA
 EM:Western Airlines:Australien
 EN:Air Dolomiti:Italien
-EN:Cal Air International:Vereinigtes Königreich
-EN:Novair International Airways:Vereinigtes Königreich
 EO:Express One:USA
 EO:flyCongo:Demokratische Republik Kongo
 EP:Iran Aseman Airlines:Iran
 EQ:TAME - Transportes Aéreos Militares Ecuadorianos:Ecuador
-ER:Astar Air Cargo:USA
 ER:DHL Airways:USA
 ES:DHL Aviation:Bahrain
 ET:Ethiopian Airlines:Äthiopien
-EU:Ecuatoriana:Ecuador
 EU:Chengdu Airlines:China
 EV:Atlantic Southeast Airlines:USA
 EW:Eurowings:Deutschland
@@ -489,35 +432,26 @@ FA:Safair:Südafrika
 FB:Bulgaria Air:Bulgarien
 FB:Fine Air:USA
 FC:Falcon Airlines Cargo Airlines:Vereinigte Arabische Emirate
-FC:Tempelhof Express:Deutschland
 FC:Flybe Nordic:Finnland
 FD:Thai AirAsia:Thailand
 FD:Cityflyer Express:Vereinigtes Königreich
 FE:Royal Khmer Airlines:Kambodscha
-FF:Tower Air:USA
 FG:Ariana Afghan Airlines:Afghanistan
 FI:Icelandair:Island
 FJ:Air Pacific:Fiji
-FK:Air Sul:Portugal
 FK:Keewatin Air:Kanada
 FL:AirTran:USA
-FM:FedEx:USA
 FM:Shanghai Airlines:China
 FN:Regional Air Lines:Marokko
 FP:TAG Aviation:Schweiz
-FQ:Brindabella Airlines:Australien
 FQ:Thomas Cook Belgium Airlines:Belgien
 FR:Centra South:Russland
 FR:Ryanair:Irland
 FS:Missionary Aviation Fellowship:Australien
 FS:STAF:Argentinien
 FT:Siem Reap Airways:Kambodscha
-FU:Air Littoral:Frankreich
-FV:Pulkovo Aviation Enterprise:Russland
-FV:Viva Air:Spanien
 FW:Ibex Airlines:Japan
 FX:FedEx:USA
-FX:German Cargo:Deutschland
 FY:Broome Aviation:Australien
 FZ:Air Facilities:Australien
 FZ:Fly Dubai:Vereinigte Arabische Emirate
@@ -538,7 +472,6 @@ GC:Gambia International Airlines:Gambia
 GE:TransAsia Airways:Republik China (Taiwan)
 GF:Gulf Air:Bahrain, Katar, Oman, Vereinigte Arabische Emirate
 GG:Air Guyane:Französisch-Guyana
-GG:Air Holland:Niederlande
 GH:Globus Airlines:Russland
 GI:Itek Air:Kirgisistan
 GJ:Eurofly:Italien
@@ -546,7 +479,6 @@ GL:Air Greenland:Grönland
 GL:Groenlandsfly:Dänemark
 GL:Miami Air International:USA
 GM:Germania Flug:Schweiz
-GN:Air Gabon:Gabon
 GO:Go Fly Ltd.:Vereinigtes Königreich
 GP:Gestair Executive Jet:Spanien
 GQ:Big Sky Airlines:USA
@@ -554,13 +486,11 @@ GR:Aurigny Air Services:Guernsey
 GR:Gemini Air Cargo:USA
 GS:Airfoyle:Vereinigtes Königreich
 GS:Grant Aviation:USA
-GT:GB Airways:Vereinigtes Königreich
 GU:Aviateca Guatemala:Guatemala
 GW:Kuban Airlines:Russland
 GX:Pacificair:Philippinen
 GY:Guyana Air 2000:Guyana
 GZ:Air Rarotonga:Neuseeland
-H2:City Bird:Belgien
 H2:Sky Airline:Chile
 H3:Harbour Air:Kanada
 H4:Inter Islands Airlines:Kapverden
@@ -575,27 +505,21 @@ HA:Hawaiian Airlines:USA
 HB:Harbor Airlines:USA
 HC:Aero Tropics:Australien
 HD:Hokkaido International Airlines:Japan
-HE:Trans European Airways:Belgien
 HE:LGW Luftfahrtgesellschaft Walter:Deutschland
-HF:Hapag-Lloyd Flug:Deutschland
 HG:Haiti International Airline:Haiti
 HG:Niki Luftfahrt GmbH:Österreich
 HH:Air Hamburg:Deutschland
 HH:Islandsflug:Island
-HH:Somali Airlines:Somalia
 HI:Papillon Crand Canyon:USA
 HJ:Asian Express Airlines:Australien
 HJ:Swedeways:Schweden
 HK:Four Star Aviation:Puerto Rico
 HK:Hamburg Airways:Deutschland
 HK:Yangon Airways:Myanmar
-HL:Holiday Express:Deutschland
 HM:Air Seychelles:Seychellen
 HN:Proteus Helicopters:Frankreich
-HN:NLM City Hopper:Niederlande
 HO:Antinea Airlines:Algerien
 HO:Juneyao Airlines:China
-HP:America West Airlines:USA
 HR:Hahn Air:Deutschland
 HR:Südwestflug:Deutschland
 HT:Royal Airways:Indien
@@ -616,24 +540,15 @@ ID:Batik Air:Indonesien
 ID:Air Normandie:Frankreich
 IE:Solomons:Solomonen
 IF:Italy First:Italien
-IF:Interflug:DDR
 IG:Meridiana:Italien
 IH:Falcon Air:Schweden
 IJ:Air Liberté:Frankreich
 IK:Imair:Aserbaidschan
-IL:Istanbul Airlines:Türkei
 IM:Intensive Air:Südafrika
-IN:Macedonian Airlines MAT:Mazedonien
-IP:Atyrau Airways:Kasachstan
-IP:Inter European Airways:Vereinigtes Königreich
-IQ:Augsburg Airways:Deutschland
 IR:Iran Air:Iran
 IS:Island Airlines:USA
-IT:Air Inter:Frankreich
 IT:Kingfisher Airlines:Indien
-IV:VG Airlines:Belgien
 IV:Windjet Airlines:Italien
-IW:AOM French Airlines:Frankreich
 IY:Yemenia:Jemen
 IY:Yemen Airways:Jemen
 IZ:Arkia Israeli Airlines:Israel
@@ -655,8 +570,6 @@ JE:Mango:Südafrika
 JE:Manx Airlines:isle man
 JF:Jetairfly:Belgien
 JF:LAB Flying Service:USA
-JH:Harlequin Air:Japan
-JI:Jade Cargo International:China
 JJ:TAM Linhas Aéreas:Brasilien
 JL:Japan Airlines:Japan
 JM:Air Jamaica:Jamaika
@@ -686,15 +599,11 @@ K9:Skyward Aviation:Kanada
 KA:Dragonair:Hongkong
 KB:Drukair:Bhutan
 KC:Air Astana:Kasachstan
-KC:Conair of Scandinavia:Dänemark
 KD:Kendell Airlines:Australien
 KE:Korean Air:Südkorea
 KF:Blue1:Finnland
-KG:Caledonian Airways:Vereinigtes Königreich
 KG:LAI:Venezuela
-KG:Orion Airways:Vereinigtes Königreich
 KI:Contact Air:Deutschland
-KJ:British Mediterranean Airways:Vereinigtes Königreich
 KK:AtlasGlobal:Türkei
 KL:KLM - Royal Dutch Airlines:Niederlande
 KM:Air Malta:Malta
@@ -702,7 +611,6 @@ KN:Maroomba Airlines:Australien
 KN:China United Airlines:China
 KO:Alaska Central Express:USA
 KQ:Kenya Airways:Kenia
-KR:Karair:Finnland
 KR:Kitty Hawk Air Cargo:USA
 KS:Penair:USA
 KT:Kampuchea Airlines:Kambodscha
@@ -733,7 +641,6 @@ LH:Lufthansa:Deutschland
 LI:LIAT:Antigua und Barbuda
 LJ:Jin Air:Südkorea
 LJ:Sierra National Airlines:Sierra Leone
-LK:Air Luxor:Portugal
 LL:Allegro Air:Mexiko
 LM:ALM:Niederländische Antillen
 LN:Libyan Arab Airlines:Libyen
@@ -744,14 +651,11 @@ LS:Channel Express:Vereinigtes Königreich
 LS:Iliamna Air Taxi:USA
 LS:Jet 2:Vereinigtes Königreich
 LT:Air Lituanica:Litauen
-LT:LTU:Deutschland
 LU:LAN Chile Express:Chile
 LV:Albanian Airlines:Albanien
 LW:Pacific Wings:USA
-LX:Crossair:Schweiz
 LX:Swiss International Air Lines:Schweiz
 LY:El Al:Israel
-LZ:Balkan Bulgarian Airlines:Bulgarien
 LZ:Belle Air:Albanien
 M2:Mahfooz Aviation:Gambia
 M3:TAM Cargo:Brasilien
@@ -773,7 +677,6 @@ MJ:LAPA:Argentinien
 MJ:Mihin Lanka:Sri Lanka
 MK:Air Mauritius:Mauritius
 ML:Midway Airlines:USA
-ML:Olympic Aviation:Griechenland
 MM:Euroatlantic Airways:Portugal
 MM:SAM:Kolumbien
 MN:Kulula:Südafrika
@@ -789,22 +692,18 @@ MV:Manas Air:Kirgisistan
 MW:Maya Island Air:Belize
 MX:Mexicana De Aviación:Mexiko
 MY:MAS Air Cargo:Mexiko
-MY:Midwest Airlines:Ägypten
 MZ:Merpati Nusantara Airlines:Indonesien
 N2:Aerolineas Internacionales:Mexiko
 N6:Aerocontinente:Perú
 N7:National Airlines:USA
-N7:Nordic East Airways:Schweden
 N8:Norwegian Air Shuttle:USA
 N9:Air Åland:Finnland
 NA:North American Airlines:USA
-NB:Sterling Airlines:Dänemark
 NC:National Jet Systems:Australien
 NC:Northern Air Cargo:USA
 ND:Airlink:Papua-Neuguinea
 ND:Sky Wings:Griechenland
 NF:Air Vanuatu:Vanuatu
-NG:Lauda Air:Österreich
 NH:All Nippon Airways:Japan
 NI:Portugalia:Portugal
 NJ:Vanguard Airlines:USA
@@ -816,8 +715,6 @@ NP:Heavylift Cargo Airlines:Vereinigtes Königreich
 NP:Skytrans:Australien
 NQ:Air Japan:Japan
 NR:RUS:Russland
-NS:Northeast Airlines:Vereinigtes Königreich
-NS:NFD Nürnberger Flugdienst:Deutschland
 NS:Eurowings:Deutschland
 NT:Binter Canarias:Spanien
 NU:Aerocontractors:Nigeria
@@ -828,11 +725,9 @@ NW:Northwest Airlines:USA
 NX:Air Macau:Macau
 NY:Air Iceland:Island
 NZ:Air New Zealand:Neuseeland
-O2:OLT Express Regional:Polen
 O4:Antrak Air:Ghana
 OA:Olympic Airways:Griechenland
 OB:Boliviana de Aviación:Bolivien
-OC:Air California (Air Cal):USA
 OC:OMNI Aviaçao &amp; Teconologia:Portugal
 OF:Air Finland:Finnland
 OH:Comair Airlines:USA
@@ -849,7 +744,6 @@ OT:Aeropelican Air Services:Australien
 OU:Croatia Airlines:Kroatien
 OV:Aéromaritime International:Frankreich
 OV:Estonian Air:Estland
-OW:Executive Airlines:USA
 OX:Orient Thai Airlines:Thailand
 OY:Andes Lineas Aereas:Argentinien
 OY:Omni Air International:USA
@@ -864,8 +758,6 @@ P7:East Line Airlines:Russland
 P8:Pantanal:Brasilien
 P9:Pro Air:USA
 PA:Pan American World Airways:USA
-PC:Air Fiji:Fidschi
-PC:Continental Airways:Russland
 PC:Pegasus Airlines:Türkei
 PD:Pem Air:Kanada
 PF:Palestinian Airlines:Palästina
@@ -891,30 +783,19 @@ PZ:TAM Airlines:Paraguay
 Q2:Island Aviation Service:Malediven
 Q5:40 Mile Air:USA
 Q6:Aero Cóndor Perú:Peru
-Q7:Sobelair:Belgien
 Q9:Minerva Airlines:Italien
 QA:MexicanaClick:Mexiko
 QB:Air Alma:Kanada
-QB:Quebecair:Kanada
-QC:Air Congo:Zaire
-QC:Air Zaire:Zaire
 QC:Aviation Quebec Labrador:Kanada
-QD:Transbrasil:Brasilien
 QE:Crossair Europe:Frankreich
 QF:Qantas Airways:Australien
 QG:Citilink:Indonesien
-QG:Delta Air Transport:Belgien
 QG:Dynamic Airlines:Niederlande
-QH:Air Florida:USA
 QH:Kyrgyzstan:Kirgisistan
 QH:Pel-Air:Australien
-QI:Cimber Air:Dänemark
 QJ:Latpass Airlines:Lettland
-QJ:Paramount Airways:Vereinigtes Königreich
-QK:Aéromaritime:Frankreich
 QM:Air Malawi:Malawi
 QN:Air Armenia:Armenien
-QN:Royal Aviation:Kanada
 QO:Aeromexpress:Mexiko
 QO:Origin Pacific Airways:Neuseeland
 QP:Airkenya:Kenia
@@ -939,17 +820,12 @@ R9:TAF Linhas Aéreas:Brasilien
 RA:Nepal Airlines:Nepal
 RB:Syrian Arab Airlines:Syrien
 RC:Atlantic Airways:Färöer
-RC:Republic Airlines:USA
 RD:REDjet:Barbados
 RE:Aer Arann:Irland
-RF:Florida West International:USA
-RG:VARIG:Brasilien
-RH:Air Rhodesia:Rhodesien
 RH:Regionnair:Kanada
 RH:Robin Hood Aviation:Österreich
 RI:Mandala Airlines:Indonesien
 RJ:Royal Jordanian:Jordanien
-RK:Air Afrique:Westafrika
 RL:Royal Phnom Penh Airways:Kambodscha
 RL:Airworld:Vereinigtes Königreich
 RM:Air Moldova International:Moldawien
@@ -964,7 +840,6 @@ RT:Airlines of South Australia:Australien
 RU:AirBridgeCargo Airlines:Russland
 RV:Reeve Aleutian Airways:USA
 RW:RAS / Rheinland Air Service:Deutschland
-RW:Hughes Airwest:USA
 RY:Euro Exec Express:Schweden
 RZ:SANSA:Costa Rica
 S2:JetLite:Indien
@@ -994,7 +869,6 @@ SN:Brussels Airlines:Belgien
 SO:Superior Aviation:USA
 SP:SATA Air Açores:Portugal
 SQ:Singapore Airlines:Singapur
-SR:Swissair:Schweiz
 SS:Corsairfly:Frankreich
 ST:Germania:Deutschland
 ST:Yanda Airlines:Australien
@@ -1004,10 +878,8 @@ SW:Air Namibia:Namibia
 SX:Skybus Airlines:USA
 SX:Sky Work Airlines:Schweiz
 SY:Skippers Aviation:Australien
-SY:Sun Country Airlines:USA
 SZ:China Southwest Airlines:China
 T3:Eastern Airways:Vereinigtes Königreich
-T4:Hellas Jet:Griechenland
 T4:Transeast Airlines:Lettland
 T4:TRIP Linhas Aéreas:Brasilien
 T5:Turkmenistan Airlines:Turkmenistan
@@ -1023,7 +895,6 @@ TF:Malmö Aviation:Schweden
 TG:Thai Airways:Thailand
 TH:British Regional Airlines:Vereinigtes Königreich
 TH:Transmile Air Services:Malaysia
-TI:Baltic International:Lettland
 TI:Tolair:USA
 TJ:TANS Perú:Peru
 TK:Turkish Airlines:Türkei
@@ -1040,7 +911,6 @@ TS:Air Transat:Kanada
 TT:Air Lithuania:Litauen
 TT:Tiger Airways Australia:Australien
 TU:Tunisair:Tunesien
-TV:Transamerica Airlines:USA
 TX:Air Caraibes:Frankreich
 TY:Air Caledonie:Frankreich
 TY:Iberworld:Spanien
@@ -1057,33 +927,26 @@ U8:Austrian Airtransport:Österreich
 U9:Tatarstan Air:Russland
 UA:United Airlines:USA
 UB:Myanma Airways:Myanmar
-UC:Ladeco:Chile
 UD:Hex’Air:Frankreich
 UF:UM Air:Ukraine
 UG:Tunisair Express:Tunesien
 UI:Alaska Seaplane Service:Alaska
 UI:Eurocypria:Zypern
-UL:Air Lanka:Sri Lanka
 UL:SriLankan Airlines:Sri Lanka
 UM:Air Zimbabwe:Simbabwe
 UN:Transaero Airlines:Russland
 UP:Bahamasair:Bahamas
 UQ:O’Connor Airlines:Australien
 UR:Ukraine International Airlines:Ukraine
-US:Allegheny Airlines:USA
-US:Piedmont Airlines:USA
-US:US Airways:USA
 UU:Air Austral:Frankreich
 UV:Helisureste:Spanien
 UX:Air Europa:Spanien
-UY:Cameroon Airlines:Kamerun
 UZ:Tesis:Russland
 V0:Conviasa:Venezuela
 V2:Virgin Sun Airlines:Vereinigtes Königreich
 V3:Carpatair:Rumänien
 V4:South Airlines:Ukraine
 V4:Venescar Internacional:Venezuela
-V4:Venus Airlines:Griechenland
 V5:DanubeWings:Slowakei
 V6:Aero VIP:Ecuador
 V7:Volotea:Spanien
@@ -1091,11 +954,7 @@ V8:Atran:Russland
 V8:TAPSA:Argentinien
 V9:BAL Bashkiri Avialinii:Russland
 VA:Virgin Australia:Australien
-VB:Maersk Air:Dänemark
 VB:Viva Aerobus:Mexiko
-VC:Servivensa:Venezuela
-VD:Air Liberté:Frankreich
-VE:AVENSA:Venezuela
 VF:British World Airlines:Vereinigtes Königreich
 VF:Nevis Express:St. Kitts &amp; Nevis
 VF:Valuair:Singapur
@@ -1114,7 +973,6 @@ VQ:Impulse Airlines:Australien
 VR:TACV Cabo Verde Airlines:Kapverden
 VS:Virgin Atlantic:Vereinigtes Königreich
 VT:Air Tahiti:Frankreich
-VU:Air Ivoire:Elfenbeinküste
 VV:Aerosvit Airlines:Ukraine
 VW:Aeromar:Mexiko
 VX:Virgin America:USA
@@ -1130,8 +988,6 @@ W9:Air Bagan:Myanmar
 WA:KLM Cityhopper:Niederlande
 WC:Isleña Airlines:Honduras
 WD:DAS Air Cargo:Uganda
-WD:Wardair Canada:Kanada
-WE:Challenge Air Cargo:USA
 WF:Widerøe’s Flyveselskap:Norwegen
 WG:Wasaya Airways:Kanada
 WH:China Northwest Airlines:China
@@ -1139,7 +995,6 @@ WI:Tradewinds Airlines:USA
 WJ:Air Labrador:Kanada
 WK:American Falcon:Argentinien
 WK:Edelweiss Air:Schweiz
-WK:Greenair:Türkei
 WL:Aeroperlas:Panama
 WM:Winair:Niederländische Antillen
 WN:Southwest Airlines:USA
@@ -1156,8 +1011,6 @@ WY:Oman Air:Oman
 WZ:Acvila Air:Rumänien
 WZ:Red Wings:Russland
 X3:TUIfly:Deutschland
-X3:Hapag-Lloyd Express:Deutschland
-X4:XL Airways Germany:Deutschland
 X5:Afrique Airlines:Frankreich
 X5:Cronus Airlines:Griechenland
 X7:Chitaavia:Russland
@@ -1168,7 +1021,6 @@ X9:Omni Air International:USA
 X9:Avion Express:Litauen
 XC:KD Air:Kanada
 XF:Vladivostok Avia:Russland
-XG:Clickair:Spanien
 XG:Sunexpress Deutschland:Deutschland
 XH:Global Supply Systems:Großbritannien
 XJ:Mesaba Airlines:USA
@@ -1180,7 +1032,6 @@ XM:Australian Air Express:Australien
 XM:J-Air:Japan
 XN:Axon Airlines:Griechenland
 XO:China Xinjiang Airlines:China
-XO:LTE International:Spanien
 XQ:Sunexpress:Türkei
 XR:Skywest Airlines:Australien
 XS:SITA:weltweit
@@ -1197,7 +1048,6 @@ YB:South African Express:Südafrika
 YC:Flight West Airlines:Australien
 YI:Air Sunshine:USA
 YJ:National Airlines:Südafrika
-YK:KTHY <a href="/wiki/Cyprus_Turkish_Airlines" title="Cyprus Turkish Airlines" class="mw-redirect">Kibris Türk Hava Yollari</a>:Türkei/Nordzypern
 YL:Executive Airlines:USA
 YL:Yamal Airlines:Russland
 YM:Montenegro Airlines:Montenegro
@@ -1216,20 +1066,15 @@ Z3:Pro Mech Airlines:USA
 Z4:ZOOM Airlines:Kanada
 Z5:GMG Airlines:Bangladesch
 Z6:Dniproavia:Ukraine
-Z8:Pulkovo Aviation Enterprise:Russland
 Z8:Línea Aérea Amaszonas:Bolivien
 ZA:Astair:Russland
 ZB:Monarch Airlines:Vereinigtes Königreich
 ZF:Athens Airways:Griechenland
 ZI:Aigle Azur:Frankreich
 ZK:Great Lakes Airlines:USA
-ZL:Affretair:Simbabwe
-ZL:Hazelton Airlines:Australien
 ZL:Regional Express Airlines:Australien
-ZM:Scibe Airlift:Demokratische Republik Kongo
 ZN:Air Bourbon:Frankreich
 ZN:Eagle Airlines:Österreich
-ZO:Ozark Airlines:USA
 ZP:Air St. Thomas:USA
 ZQ:Qantas New Zealand:Neuseeland
 ZR:Muk Air:Dänemark
