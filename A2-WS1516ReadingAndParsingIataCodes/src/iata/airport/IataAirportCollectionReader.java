@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
 	Scanner scanner = null;
+	Matcher matcher = null;
 
 	public Collection<? extends Iata> readLocalCollection() {
 		Collection<IataAirport> airports = new LinkedList<IataAirport>();
@@ -36,8 +37,6 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 		return true;
 	}
 
-	Matcher matcher = null;
-
 	private String replace_tokens(String line) {
 
 		matcher = Pattern.compile("<td>").matcher(line);
@@ -52,22 +51,6 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 		line = matcher.replaceAll("");
 		matcher = Pattern.compile("</td>").matcher(line);
 		return matcher.replaceAll("");
-	}
-
-	int element_length = 0;
-
-	private String next() {
-
-		String line = null;
-		line = scanner.nextLine();
-		element_length++;
-		if (line.matches("</tr>") && element_length < 7) {
-			line = null;
-			element_length = 0;
-			System.out.println(element_length);
-		}
-
-		return line;
 	}
 
 	protected Collection<? extends Iata> readSingleCollection(URL url) { // TODO
@@ -96,7 +79,7 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 			code = null;
 			name = "";
 
-			line = next(); // Code
+			line = scanner.nextLine(); // Code
 			matcher = Pattern.compile("<td>(<s>)?(...)(</s>)?</td>").matcher(
 					line);
 			if (matcher.matches())
@@ -106,39 +89,39 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 				continue;
 			}
 
-			line = next(); // zweiter code
+			line = scanner.nextLine(); // zweiter code
 			if (line == null) {
 				next_element_exists = forward_to_next_element();
 				continue;
 			}
 			
-			line = next(); // Name
+			line = scanner.nextLine(); // Name
 			if (line == null) {
 				next_element_exists = forward_to_next_element();
 				continue;
 			}
 			name = replace_tokens(line);
 
-			line = next(); // Ort
+			line = scanner.nextLine(); // Ort
 			if (line == null) {
 				next_element_exists = forward_to_next_element();
 				continue;
 			}
 
-			line = next(); // Region
+			line = scanner.nextLine(); // Region
 			if (line == null) {
 				next_element_exists = forward_to_next_element();
 				continue;
 			}
 
-			line = next(); // Land
+			line = scanner.nextLine(); // Land
 			if (line == null) {
 				next_element_exists = forward_to_next_element();
 				continue;
 			}
 			country = replace_tokens(line);
 
-			line = next(); // </tr>
+			line = scanner.nextLine(); // </tr>
 			if (line == null) {
 				next_element_exists = forward_to_next_element();
 				continue;
