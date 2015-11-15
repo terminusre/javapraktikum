@@ -511,7 +511,7 @@ BGD:Hutchinson County Airport:Vereinigte Staaten
 BGE:Decatur County Airport:Vereinigte Staaten
 BGF:Bangui M’Poko International Airport:Zentralafrikanische Republik
 BGI:Grantley Adams International Airport:Barbados
-BGJ:Flughafen Borgarfjörður <b>wird leider nicht bedient</b>:Island
+BGJ:Flughafen Borgarfjörður wird leider nicht bedient:Island
 BGK:Flughafen Big Creek:Belize
 BGM:Greater Binghamton Airport:Vereinigte Staaten
 BGN:RAF Brüggen:Deutschland
@@ -1130,7 +1130,7 @@ DFI:Flughafen Defiance Memorial:Vereinigte Staaten
 DFW:Internationaler Flughafen Dallas/Fort Worth:Vereinigte Staaten
 DGA:Flughafen Dangriga:Belize
 DGL:Kommunaler Flughafen Douglas:Vereinigte Staaten
-DGN:Flughafen Dahlgren Naval Surface Warfare Center <b>(wird leider nicht bedient)</b>:Vereinigte Staaten
+DGN:Flughafen Dahlgren Naval Surface Warfare Center (wird leider nicht bedient):Vereinigte Staaten
 DGO:Internationaler Flughafen General Guadalupe Victoria:Mexiko
 DGW:Flughafen Converse County:Vereinigte Staaten
 DGX:Royal-Air-Force St. Athan:Vereinigtes Königreich
@@ -1490,7 +1490,7 @@ FPO:Internationaler Flughafen Freeport:Bahamas
 FPR:Internationaler Flughafen St. Lucie County:Vereinigte Staaten
 FPY:Flughafen Perry-Foley:Vereinigte Staaten
 FRA:Flughafen Frankfurt am Main:Deutschland
-FRF:<td colspan="4">Rhein-Main Air Base (ehemaliger militärischer Bereich von FRA; Ende 2005 aufgelöst):FRG
+FRF:Rhein-Main Air Base (ehemaliger militärischer Bereich von FRA; Ende 2005 aufgelöst):FRG
 FRH:Kommunaler Flughafen French Lick:Vereinigte Staaten
 FRI:Marshall Army Air Field:Vereinigte Staaten
 FRL:Flughafen Forlì-Ridolfi:Italien
@@ -1693,7 +1693,7 @@ GWO:Flughafen Greenwood-Leflore:Vereinigte Staaten
 GWS:Kommunaler Flughafen Glenwood Springs:Vereinigte Staaten
 GWT:Flughafen Sylt:Deutschland
 GWV:Flughafen Glendale Fokker Field:Vereinigte Staaten
-GWW:<s>Flugplatz Gatow</s>:<s>Deutschland</s>
+GWW:Flugplatz Gatow:Deutschland
 GWY:Flughafen Galway:Irland
 GXF:Internationaler Flughafen Sayun:Jemen
 GXQ:Flughafen Teniente Vidal:Chile
@@ -2642,7 +2642,7 @@ MIC:Minneapolis (Crystal Airport):USA
 MID:Merida (Manuel Crecencio Rejon):Mexiko
 MIE:Muncie (Delaware County Airport):USA
 MIF:Monahans (Roy Hurd Airport):USA
-MIJ:– Mili Island (Mili Airport):</tr>
+MIK:Flughafen Mikkeli:Finnland
 MIL:Mailand (Metropolitan Area):, Italien
 MIO:Miami (Municipal Airport):USA
 MIQ:Omaha (Millard Airport):USA
@@ -3532,7 +3532,7 @@ SCQ:Flughafen Santiago de Compostela:Spanien
 SCR:Scranton Municipal Airport:USA
 SCS:Scatsta Airport:Großbritannien
 SCU:Flughafen Santiago de Cuba:Kuba
-SDA:vormals für Saddam International Airport, jetzt <b>BGW</b>:Irak
+SDA:vormals für Saddam International Airport, jetzt BGW:Irak
 SDF:Flughafen Louisville:USA
 SDJ:Flughafen Sendai:Japan
 SDK:Flughafen Sandakan:Malaysia
@@ -3818,7 +3818,7 @@ TGD:Flughafen Podgorica:Montenegro
 TGE:Moton Field:USA
 TGU:Flughafen Tegucigalpa:Honduras
 THA:Tullahoma Regional Airport:USA
-THF:<s>Flughafen Berlin-Tempelhof</s>:<s>Deutschland</s>
+THF:Flughafen Berlin-Tempelhof:Deutschland
 THM:Thompson Falls Airport:USA
 THP:Hot Springs County:USA
 THR:Flughafen Teheran-Mehrabad:Iran

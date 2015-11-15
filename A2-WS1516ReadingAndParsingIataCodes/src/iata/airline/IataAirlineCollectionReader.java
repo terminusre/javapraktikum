@@ -36,7 +36,6 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 			if (matcher.matches())
 				return matcher.group(1);
 		}
-		System.out.println("Error at " + string);
 		return null;
 	}
 
@@ -54,8 +53,6 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 		String country = null;
 		LinkedList<IataAirline> airlines = new LinkedList<IataAirline>();
 
-		String line = null;
-
 		Boolean next_element_exists = forward_to_next_element();
 
 		forward_to_next_element();
@@ -63,24 +60,17 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 
 		while (next_element_exists) {
 
-			code = null;
-			name = null;
-			country = null;
-
-			line = scanner.nextLine(); // code
-			matcher = Pattern.compile("<td>(..).*</td>").matcher(line);
+			matcher = Pattern.compile("<td>(..).*</td>").matcher(
+					scanner.nextLine()); // code
 			if (matcher.matches())
 				code = matcher.group(1);
 			else {
-				System.out.println("code: " + line);
-				break;
+				code = null;
 			}
 
-			line = scanner.nextLine(); // name
-			name = process_String(line);
+			name = process_String(scanner.nextLine()); // name
 
-			line = scanner.nextLine(); // country
-			country = process_String(line);
+			country = process_String(scanner.nextLine()); // country
 
 			if (code != null && name != null && country != null)
 				airlines.add(new IataAirline(code, name, country));
