@@ -21,7 +21,7 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 	}
 
 	private Boolean forward_to_next_element() {
-		if (null == scanner.findWithinHorizon("<tr>", 0))
+		if (scanner.findWithinHorizon("<tr>", 0) == null)
 			return false;
 		scanner.nextLine();
 		return true;
@@ -55,25 +55,30 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 
 		Boolean next_element_exists = forward_to_next_element();
 
-		forward_to_next_element();
-		next_element_exists = forward_to_next_element();
-
 		while (next_element_exists) {
 
-			matcher = Pattern.compile("<td>(..).*</td>").matcher(
+			matcher = Pattern.compile("<td>([0-9].).*</td>").matcher(
 					scanner.nextLine()); // code
 			if (matcher.matches())
 				code = matcher.group(1);
 			else {
-				code = null;
+				next_element_exists = forward_to_next_element();
+				continue;
 			}
 
 			name = process_String(scanner.nextLine()); // name
+			if (name == null) {
+				next_element_exists = forward_to_next_element();
+				continue;
+			}
 
 			country = process_String(scanner.nextLine()); // country
+			if (country == null) {
+				next_element_exists = forward_to_next_element();
+				continue;
+			}
 
-			if (code != null && name != null && country != null)
-				airlines.add(new IataAirline(code, name, country));
+			airlines.add(new IataAirline(code, name, country));
 
 			next_element_exists = forward_to_next_element();
 

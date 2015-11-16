@@ -17,13 +17,13 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
 	public Collection<? extends Iata> readLocalCollection() {
 		Collection<IataAirport> airports = new LinkedList<IataAirport>();
-		Collection<IataAirport> a;
+		Collection<IataAirport> airports_Teilliste;
 
 		URL url = null;
 		for (int i = 0; i < 26; i++) {
 			url = getClass().getResource((char) (65 + i) + ".htm");
-			a = (Collection<IataAirport>) readSingleCollection(url);
-			airports.addAll(a);
+			airports_Teilliste = (Collection<IataAirport>) readSingleCollection(url);
+			airports.addAll(airports_Teilliste);
 		}
 
 		return airports;
@@ -70,6 +70,10 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
 			matcher = Pattern.compile("<.*?>").matcher(scanner.nextLine()); // name
 			name = matcher.replaceAll("");
+			if (name.matches("")) {
+				next_element_exists = forward_to_next_element();
+				continue;
+			}
 
 			scanner.nextLine(); // location
 
@@ -77,9 +81,12 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
 			matcher = Pattern.compile("<.*?>").matcher(scanner.nextLine()); // country
 			country = matcher.replaceAll("");
+			if (country.matches("")) {
+				next_element_exists = forward_to_next_element();
+				continue;
+			}
 
-			if (code != null && !name.matches("") && !country.matches(""))
-				airports.add(new IataAirport(code, name, country));
+			airports.add(new IataAirport(code, name, country));
 
 			next_element_exists = forward_to_next_element();
 
