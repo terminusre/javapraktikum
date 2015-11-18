@@ -13,8 +13,6 @@ import java.util.regex.Pattern;
 
 public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
-	Scanner scanner = null;
-
 	public Collection<? extends Iata> readLocalCollection() {
 		Collection<IataAirport> airports = new LinkedList<IataAirport>();
 		Collection<IataAirport> airports_Teilliste;
@@ -29,7 +27,7 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 		return airports;
 	}
 
-	private Boolean forward_to_next_element() {
+	private Boolean forward_to_next_element(Scanner scanner) {
 		if (null == scanner.findWithinHorizon("<tr>", 0))
 			return false;
 		scanner.nextLine();
@@ -38,61 +36,59 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
 	public Collection<? extends Iata> readSingleCollection(URL url) {
 
-		try {
-			this.scanner = new Scanner(url.openStream(), "UTF-8");
+		LinkedList<IataAirport> airports = new LinkedList<IataAirport>();
+
+		try (Scanner scanner = new Scanner(url.openStream(), "UTF-8")) {
+
+			Matcher matcher = null;
+
+			String code = null;
+			String name = null;
+			String country = null;
+
+			Boolean next_element_exists = forward_to_next_element(scanner);
+
+			while (next_element_exists) {
+
+				matcher = Pattern.compile("<td>(<s>)?(...)(</s>)?</td>")
+						.matcher(scanner.nextLine()); // code
+				if (matcher.matches())
+					code = matcher.group(2);
+				else {
+					next_element_exists = forward_to_next_element(scanner);
+					continue;
+				}
+
+				scanner.nextLine(); // 2nd code
+
+				matcher = Pattern.compile("<.*?>").matcher(scanner.nextLine()); // name
+				name = matcher.replaceAll("");
+				if (name.matches("")) {
+					next_element_exists = forward_to_next_element(scanner);
+					continue;
+				}
+
+				scanner.nextLine(); // location
+
+				scanner.nextLine(); // region
+
+				matcher = Pattern.compile("<.*?>").matcher(scanner.nextLine()); // country
+				country = matcher.replaceAll("");
+				if (country.matches("")) {
+					next_element_exists = forward_to_next_element(scanner);
+					continue;
+				}
+
+				airports.add(new IataAirport(code, name, country));
+
+				next_element_exists = forward_to_next_element(scanner);
+
+			}
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		LinkedList<IataAirport> airports = new LinkedList<IataAirport>();
-
-		Matcher matcher = null;
-
-		String code = null;
-		String name = null;
-		String country = null;
-
-		Boolean next_element_exists = forward_to_next_element();
-
-		while (next_element_exists) {
-
-			matcher = Pattern.compile("<td>(<s>)?(...)(</s>)?</td>").matcher(
-					scanner.nextLine()); // code
-			if (matcher.matches())
-				code = matcher.group(2);
-			else {
-				next_element_exists = forward_to_next_element();
-				continue;
-			}
-
-			scanner.nextLine(); // 2nd code
-
-			matcher = Pattern.compile("<.*?>").matcher(scanner.nextLine()); // name
-			name = matcher.replaceAll("");
-			if (name.matches("")) {
-				next_element_exists = forward_to_next_element();
-				continue;
-			}
-
-			scanner.nextLine(); // location
-
-			scanner.nextLine(); // region
-
-			matcher = Pattern.compile("<.*?>").matcher(scanner.nextLine()); // country
-			country = matcher.replaceAll("");
-			if (country.matches("")) {
-				next_element_exists = forward_to_next_element();
-				continue;
-			}
-
-			airports.add(new IataAirport(code, name, country));
-
-			next_element_exists = forward_to_next_element();
-
-		}
-
-		scanner.close();
 		return airports;
 	}
 }
