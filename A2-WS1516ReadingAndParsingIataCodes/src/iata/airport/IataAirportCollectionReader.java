@@ -18,8 +18,8 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 		Collection<IataAirport> airports_Teilliste;
 
 		URL url = null;
-		for (int i = 0; i < 26; i++) {
-			url = getClass().getResource((char) (65 + i) + ".htm");
+		for (char c = 'A'; c <= 'Z'; c++) {
+			url = getClass().getResource(c + ".htm");
 			airports_Teilliste = (Collection<IataAirport>) readSingleCollection(url);
 			airports.addAll(airports_Teilliste);
 		}
