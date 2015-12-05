@@ -4,9 +4,8 @@ import java.time.LocalDateTime;
 
 import de.hawhh.kosten.GeldBetrag;
 import de.hawhh.reisebuchung.Ort;
-import de.hawhh.reisebuchung.ReiseBaustein;
 
-public abstract class Flug extends ReiseBaustein {
+public abstract class OneWayFlug extends Flug {
 
 	@Override
 	public abstract LocalDateTime getBeginn();

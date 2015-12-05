@@ -15,9 +15,9 @@ public class Dollar extends AbstractGeldBetrag {
 
 	@Override
 	public GeldBetrag ausBasis(double basis) {
-		return new Dollar((int) (geldbetrag / dollar_to_euro));
+		return new Dollar((int) (basis / dollar_to_euro));
 	}
-	
+
 	@Override
 	public int getMajor() {
 		return geldbetrag / 100;
@@ -30,12 +30,34 @@ public class Dollar extends AbstractGeldBetrag {
 
 	@Override
 	public String getMinorSymbol() {
-		return "¢";
+		return "ï¿½";
 	}
 
 	@Override
 	public String getMajorSymbol() {
 		return "$";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + geldbetrag;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (GeldBetrag.class != obj.getClass().getSuperclass())
+			return false;
+		double otherGeldbetrag = ((GeldBetrag) obj).inBasis();
+		if (otherGeldbetrag != this.inBasis())
+			return false;
+		return true;
 	}
 
 }

@@ -1,20 +1,14 @@
-package de.hawhh.reisebuchung;
+package de.hawhh.reisebuchung.mietwagen;
 
-public class Ort {
-
+public class WagenTyp {
 	private String name;
 
-	public Ort() {
-		this.name = "$UNKNOWN$";
-	}
-
-	public Ort(String name) {
+	private WagenTyp(String name) {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "Ort [" + (name != null ? name : "") + "]";
+	public String getName() {
+		return name;
 	}
 
 	@Override
@@ -33,7 +27,7 @@ public class Ort {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Ort other = (Ort) obj;
+		WagenTyp other = (WagenTyp) obj;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -41,5 +35,4 @@ public class Ort {
 			return false;
 		return true;
 	}
-
 }

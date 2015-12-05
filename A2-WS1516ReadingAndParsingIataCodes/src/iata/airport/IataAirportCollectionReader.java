@@ -5,7 +5,6 @@ import iata.Iata;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -13,14 +12,14 @@ import java.util.regex.Pattern;
 
 public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 
-	public Collection<? extends Iata> readLocalCollection() {
-		Collection<IataAirport> airports = new LinkedList<IataAirport>();
-		Collection<IataAirport> airports_Teilliste;
+	public LinkedList<IataAirport> readLocalCollection() {
+		LinkedList<IataAirport> airports = new LinkedList<IataAirport>();
+		LinkedList<IataAirport> airports_Teilliste;
 
 		URL url = null;
 		for (char c = 'A'; c <= 'Z'; c++) {
 			url = getClass().getResource(c + ".htm");
-			airports_Teilliste = (Collection<IataAirport>) readSingleCollection(url);
+			airports_Teilliste = readSingleCollection(url);
 			airports.addAll(airports_Teilliste);
 		}
 
@@ -34,7 +33,7 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 		return true;
 	}
 
-	public Collection<? extends Iata> readSingleCollection(URL url) {
+	public LinkedList<IataAirport> readSingleCollection(URL url) {
 
 		LinkedList<IataAirport> airports = new LinkedList<IataAirport>();
 
@@ -45,6 +44,7 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 			String code = null;
 			String name = null;
 			String country = null;
+			String location = null;
 
 			Boolean next_element_exists = forward_to_next_element(scanner);
 
@@ -68,7 +68,8 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 					continue;
 				}
 
-				scanner.nextLine(); // location
+				matcher = Pattern.compile("<.*?>").matcher(scanner.nextLine()); // location
+				location = matcher.replaceAll("");
 
 				scanner.nextLine(); // region
 
@@ -79,7 +80,7 @@ public class IataAirportCollectionReader extends AbstractIataCollectionReader {
 					continue;
 				}
 
-				airports.add(new IataAirport(code, name, country));
+				airports.add(new IataAirport(code, name, country, location));
 
 				next_element_exists = forward_to_next_element(scanner);
 

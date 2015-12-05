@@ -6,11 +6,13 @@ public class IataAirport implements Iata {
 	String code = null;
 	String country = null;
 	String name = null;
+	String location = null;
 
-	public IataAirport(String code, String name, String country) {
+	public IataAirport(String code, String name, String country, String location) {
 		this.code = code;
 		this.name = name;
 		this.country = country;
+		this.location = location;
 	}
 
 	@Override
@@ -28,9 +30,13 @@ public class IataAirport implements Iata {
 		return name;
 	}
 
+	public String getLocation() {
+		return location;
+	}
+
 	@Override
 	public String toString() {
-		return code + ":" + name + ":" + country;
+		return code + ":" + name + ":" + country + ":" + location;
 	}
 
 }
