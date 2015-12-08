@@ -1,7 +1,6 @@
 package de.hawhh.reisebuchung.flug;
 
 import java.time.LocalDateTime;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.TreeSet;
 
@@ -9,38 +8,14 @@ import de.hawhh.kosten.Euro;
 import de.hawhh.kosten.GeldBetrag;
 import de.hawhh.reisebuchung.Ort;
 
-class DirektFlugComp implements Comparator<DirektFlug> {
-
-	@Override
-	public int compare(DirektFlug direktFlug1, DirektFlug direktFlug2) {
-		return direktFlug1.getEnde().compareTo(direktFlug2.getBeginn());
-		// TODO flug 1 und flug 2 muessen vielleicht getauscht werden
-	}
-
-}
-
 public class StopOverFlug extends OneWayFlug {
-
-	private TreeSet<DirektFlug> listeTeilfluege = new TreeSet<DirektFlug>( new Comparator<DirektFlug>(){
-
-		@Override
-		public int compare(DirektFlug o1, DirektFlug o2) {
-			return o1.getEnde().compareTo(o2.getBeginn());
-		}
-		
-	});
-		//	new DirektFlugComp());
-
-//	public StopOverFlug(Collection<DirektFlug> listeTeilFluege) {
-//		listeTeilFluege.stream().forEach(teilflug -> this.add(teilflug));
-//	}
-//
-//	public StopOverFlug(DirektFlug... listeTeilFluege) {
-//
-//		for (DirektFlug teilflug : listeTeilFluege) {
-//			this.add(teilflug);
-//		}
-//	}
+	private TreeSet<DirektFlug> listeTeilfluege = new TreeSet<DirektFlug>(
+			new Comparator<DirektFlug>() {
+				@Override
+				public int compare(DirektFlug o1, DirektFlug o2) {
+					return o1.getEnde().compareTo(o2.getBeginn());
+				}
+			});
 
 	public boolean add(DirektFlug direktFlug) {
 		DirektFlug vorgaenger = listeTeilfluege.lower(direktFlug);

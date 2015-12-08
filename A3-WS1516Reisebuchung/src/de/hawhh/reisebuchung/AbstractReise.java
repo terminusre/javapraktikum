@@ -8,21 +8,15 @@ import java.util.TreeSet;
 import de.hawhh.kosten.Euro;
 import de.hawhh.kosten.GeldBetrag;
 
-class ReiseBausteinComp implements Comparator<ReiseBaustein> {
-
-	@Override
-	public int compare(ReiseBaustein reiseBaustein1,
-			ReiseBaustein reiseBaustein2) {
-		return reiseBaustein1.getBeginn().compareTo(reiseBaustein2.getBeginn());
-		// TODO ReiseBaustein 1 und ReiseBaustein 2 muessen vielleicht getauscht
-		// werden
-	}
-
-}
-
 public abstract class AbstractReise implements Reise {
 	private TreeSet<ReiseBaustein> reiseBausteine = new TreeSet<ReiseBaustein>(
-			new ReiseBausteinComp());
+			new Comparator<ReiseBaustein>() {
+				@Override
+				public int compare(ReiseBaustein o1, ReiseBaustein o2) {
+					return o1.getBeginn().compareTo(o2.getBeginn());
+				}
+			}
+	);
 
 	protected void add(ReiseBaustein reiseBaustein) {
 		reiseBausteine.add(reiseBaustein);
@@ -50,12 +44,9 @@ public abstract class AbstractReise implements Reise {
 
 	@Override
 	public GeldBetrag getPreis() {
-		return reiseBausteine
-				.stream()
+		return reiseBausteine.stream()
 				.map(reiseBaustein -> reiseBaustein.getPreis())
-				.reduce(new Euro(0),
-						(preis1, preis2) -> preis1
-								.add(preis2));
+				.reduce(new Euro(0), (preis1, preis2) -> preis1.add(preis2));
 	}
 
 	@Override
