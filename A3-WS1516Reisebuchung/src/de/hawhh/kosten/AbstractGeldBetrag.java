@@ -1,7 +1,8 @@
 package de.hawhh.kosten;
 
 public abstract class AbstractGeldBetrag implements GeldBetrag {
-
+	protected int geldbetrag;
+	
 	@Override
 	public abstract double inBasis();
 

@@ -20,7 +20,15 @@ public abstract class AbstractIataCollectionReader {
 	}
 
 	public abstract Collection<? extends Iata> readLocalCollection();
-	
+
 	protected abstract Collection<? extends Iata> readSingleCollection(URL url);
+
+	public static IataAirportCollectionReader getAirportInstance() {
+		return new IataAirportCollectionReader();
+	}
+
+	public static IataAirlineCollectionReader getAirlineInstance() {
+		return new IataAirlineCollectionReader();
+	}
 
 }

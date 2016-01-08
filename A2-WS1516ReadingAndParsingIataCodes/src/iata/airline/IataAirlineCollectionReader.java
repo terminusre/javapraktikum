@@ -1,7 +1,6 @@
 package iata.airline;
 
 import iata.AbstractIataCollectionReader;
-import iata.Iata;
 
 import java.io.IOException;
 import java.net.URL;
@@ -12,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
-	public Collection<? extends Iata> readLocalCollection() {
+	public Collection<? extends IataAirline> readLocalCollection() {
 		return readSingleCollection(getClass().getResource("iata_airline.htm"));
 	}
 
@@ -36,7 +35,7 @@ public class IataAirlineCollectionReader extends AbstractIataCollectionReader {
 		return null;
 	}
 
-	protected Collection<? extends Iata> readSingleCollection(URL url) {
+	protected Collection<? extends IataAirline> readSingleCollection(URL url) {
 
 		LinkedList<IataAirline> airlines = new LinkedList<IataAirline>();
 

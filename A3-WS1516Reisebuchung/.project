@@ -3,6 +3,8 @@
 	<name>A3-WS1516Reisebuchung</name>
 	<comment></comment>
 	<projects>
+		<project>A2-WS1516ReadingAndParsingIataCodes</project>
+		<project>A4-WS1516GUI-JavaFX-Reisebuchung</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

@@ -1,13 +1,21 @@
 package de.hawhh.kosten;
 
+import java.util.Random;
+
 public class Dollar extends AbstractGeldBetrag {
-	private int geldbetrag;
+
 	private double dollar_to_euro = 0.92;
 
 	public Dollar(int geldbetrag) {
 		this.geldbetrag = geldbetrag;
 	}
 
+	public Dollar(int untere_Grenze, int obere_Grenze) {
+		Random rand = new Random();
+		this.geldbetrag = rand.nextInt((obere_Grenze - untere_Grenze) + 1)
+				+ untere_Grenze;
+	}
+	
 	@Override
 	public double inBasis() {
 		return geldbetrag * dollar_to_euro;

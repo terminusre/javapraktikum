@@ -5,11 +5,12 @@ import iata.airport.IataAirport;
 
 import java.time.LocalDateTime;
 
+import de.hawhh.kosten.Euro;
 import de.hawhh.kosten.GeldBetrag;
 import de.hawhh.reisebuchung.Ort;
 
 public class DirektFlug extends OneWayFlug {
-	private int flugnummer;
+	private FlugNummer flugnummer;
 	private IataAirline airline;
 	private IataAirport abflughafen;
 	private IataAirport ankunftflughafen;
@@ -17,11 +18,23 @@ public class DirektFlug extends OneWayFlug {
 	private LocalDateTime ankunftsflugszeit;
 	private GeldBetrag preis;
 
+	public DirektFlug(FlugNummer flugNummer, IataAirline airline,
+			IataAirport von, IataAirport nach, LocalDateTime depart,
+			LocalDateTime arrive, Euro preis) {
+		this.flugnummer = flugNummer;
+		this.airline = airline;
+		this.abflughafen = von;
+		this.ankunftflughafen = nach;
+		this.abflugszeit = depart;
+		this.ankunftsflugszeit = arrive;
+		this.preis = preis;
+	}
+
 	public DirektFlug(int flugnummer, IataAirline airline,
 			IataAirport abflughafen, IataAirport ankunftflughafen,
 			LocalDateTime abflugszeit, LocalDateTime ankunftsflugszeit,
 			GeldBetrag preis) {
-		this.flugnummer = flugnummer;
+		this.flugnummer = new FlugNummer(airline, Integer.toString(flugnummer));
 		this.airline = airline;
 		this.abflughafen = abflughafen;
 		this.ankunftflughafen = ankunftflughafen;
@@ -69,7 +82,7 @@ public class DirektFlug extends OneWayFlug {
 		int result = 1;
 		result = prime * result
 				+ ((abflugszeit == null) ? 0 : abflugszeit.hashCode());
-		result = prime * result + flugnummer;
+		result = prime * result + flugnummer.toInt();
 		return result;
 	}
 
@@ -90,6 +103,16 @@ public class DirektFlug extends OneWayFlug {
 		if (flugnummer != other.flugnummer)
 			return false;
 		return true;
+	}
+
+	public DirektFlug delayDays(int i) {
+		return new DirektFlug(flugnummer, airline, abflughafen,
+				ankunftflughafen, abflugszeit.plusDays(i),
+				ankunftsflugszeit.plusDays(i), (Euro) preis);
+	}
+
+	public FlugNummer getFlugNummer() {
+		return flugnummer;
 	}
 
 }

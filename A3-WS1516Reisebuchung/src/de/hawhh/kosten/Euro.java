@@ -1,10 +1,17 @@
 package de.hawhh.kosten;
 
+import java.util.Random;
+
 public class Euro extends AbstractGeldBetrag {
-	private int geldbetrag;
 
 	public Euro(int geldbetrag) {
 		this.geldbetrag = geldbetrag;
+	}
+
+	public Euro(int untere_Grenze, int obere_Grenze) {
+		Random rand = new Random();
+		this.geldbetrag = rand.nextInt((obere_Grenze - untere_Grenze) + 1)
+				+ untere_Grenze;
 	}
 
 	@Override

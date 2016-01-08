@@ -1,7 +1,6 @@
 package iata.airport;
 
 import iata.AbstractIataCollectionReader;
-import iata.Iata;
 
 import java.io.IOException;
 import java.net.URL;
