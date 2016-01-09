@@ -34,7 +34,7 @@
                <Label fx:id="left_panel_flugdauer" layoutX="146.0" layoutY="171.0" text="Flugdauer" />
                <Label fx:id="left_panel_preis" layoutX="146.0" layoutY="193.0" text="Kosten" />
                <Label layoutX="16.0" layoutY="270.0" text="Flüge" />
-               <Button layoutX="166.0" layoutY="549.0" mnemonicParsing="false" text="Flug entfernen" />
+               <Button fx:id="flugEntfernenButton" layoutX="166.0" layoutY="549.0" mnemonicParsing="false" text="Flug entfernen" />
                <ListView fx:id="left_panel_listeGebuchterFluege" layoutX="13.0" layoutY="296.0" prefHeight="246.0" prefWidth="558.0" />
                <TextField fx:id="left_panel_kundentextbox" layoutX="92.0" layoutY="38.0" />
             </children>
@@ -57,17 +57,17 @@
                                  <TextField fx:id="right_panel_uhrzeitBox" layoutX="228.0" layoutY="85.0" prefHeight="25.0" prefWidth="68.0" />
                                  <Label layoutX="308.0" layoutY="89.0" text="+Tage" />
                                  <TextField fx:id="right_panel_tageBox" layoutX="350.0" layoutY="85.0" prefHeight="25.0" prefWidth="46.0" />
-                                 <TableView fx:id="right_panel_listeVerfuegbarerFluege" layoutY="142.0" prefHeight="353.0" prefWidth="604.0">
+                                 <10 fx:id="right_panel_listeVerfuegbarerFluege" layoutY="142.0" prefHeight="353.0" prefWidth="604.0">
                                    <columns>
-                                     <TableColumn prefWidth="98.0" text="Flugnummer" />
-                                     <TableColumn prefWidth="63.0" text="von" />
-                                       <TableColumn prefWidth="64.0" text="nach" />
-                                       <TableColumn prefWidth="75.0" text="ab" />
-                                       <TableColumn prefWidth="75.0" text="an" />
-                                       <TableColumn prefWidth="75.0" text="Preis" />
+                                     <TableColumn fx:id="flugnummernColumn" prefWidth="98.0" text="Flugnummer" />
+                                     <TableColumn fx:id="abflughafenColumn" prefWidth="63.0" text="von" />
+                                       <TableColumn fx:id="ankunftflughafenColumn" prefWidth="64.0" text="nach" />
+                                       <TableColumn fx:id="abflugszeitColumn" prefWidth="75.0" text="ab" />
+                                       <TableColumn fx:id="ankunftszeitColumn" prefWidth="75.0" text="an" />
+                                       <TableColumn fx:id="preisColumn" prefWidth="75.0" text="Preis" />
                                    </columns>
                                  </TableView>
-                                 <Button layoutX="11.0" layoutY="530.0" mnemonicParsing="false" text="Übernehmen" />
+                                 <Button fx:id="uebernehmenButton" layoutX="11.0" layoutY="530.0" mnemonicParsing="false" text="Übernehmen" />
                               </children>
                            </AnchorPane>
                      </content>
