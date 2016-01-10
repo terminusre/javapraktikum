@@ -130,12 +130,12 @@ public class ReiseBuchungController extends Application {
 		
 		
 		
-		flugnummernColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("Flg#"));
-		abflughafenColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("von"));
-		ankunftflughafenColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("nach"));
-		abflugszeitColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("ab"));
-		ankunftszeitColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("an"));
-		preisColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("Preis"));
+//		flugnummernColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("Flg#"));
+//		abflughafenColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("von"));
+//		ankunftflughafenColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("nach"));
+//		abflugszeitColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("ab"));
+//		ankunftszeitColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("an"));
+//		preisColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("Preis"));
 
 		// flugGenerator.generateDirektFlugListe(start, plusDays, von, nach)
 		// right_panel_listeVerfuegbarerFluege.getItems().addAll( );

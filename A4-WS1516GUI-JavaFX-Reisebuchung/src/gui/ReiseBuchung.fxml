@@ -57,7 +57,7 @@
                                  <TextField fx:id="right_panel_uhrzeitBox" layoutX="228.0" layoutY="85.0" prefHeight="25.0" prefWidth="68.0" />
                                  <Label layoutX="308.0" layoutY="89.0" text="+Tage" />
                                  <TextField fx:id="right_panel_tageBox" layoutX="350.0" layoutY="85.0" prefHeight="25.0" prefWidth="46.0" />
-                                 <10 fx:id="right_panel_listeVerfuegbarerFluege" layoutY="142.0" prefHeight="353.0" prefWidth="604.0">
+                                 <TableView fx:id="right_panel_listeVerfuegbarerFluege" layoutY="142.0" prefHeight="353.0" prefWidth="604.0">
                                    <columns>
                                      <TableColumn fx:id="flugnummernColumn" prefWidth="98.0" text="Flugnummer" />
                                      <TableColumn fx:id="abflughafenColumn" prefWidth="63.0" text="von" />
