@@ -29,6 +29,14 @@ public class StopOverFlug extends OneWayFlug {
 	}
 
 	@Override
+	public StopOverFlug delayDays(int numDays) {
+		StopOverFlug thisDelayed = new StopOverFlug();
+		listeTeilfluege.stream().forEach(
+				flug -> thisDelayed.add(flug.delayDays(numDays)));
+		return thisDelayed;
+	}
+
+	@Override
 	public LocalDateTime getBeginn() {
 
 		return listeTeilfluege.first().getBeginn();

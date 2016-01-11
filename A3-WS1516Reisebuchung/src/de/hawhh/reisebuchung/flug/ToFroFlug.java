@@ -1,5 +1,7 @@
 package de.hawhh.reisebuchung.flug;
 
+import iata.airline.IataAirline;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 
@@ -9,6 +11,7 @@ import de.hawhh.reisebuchung.Ort;
 public class ToFroFlug extends Flug {
 	DirektFlug hinflug;
 	DirektFlug rueckflug;
+	IataAirline airline = null;
 
 	public ToFroFlug(DirektFlug hinflug, DirektFlug rueckflug) {
 		if (Duration.between(hinflug.getEnde(), rueckflug.getBeginn())
@@ -18,6 +21,24 @@ public class ToFroFlug extends Flug {
 		} else {
 			throw new IllegalArgumentException();
 		}
+	}
+
+	public ToFroFlug(IataAirline airline, DirektFlug hinflug,
+			DirektFlug rueckflug) {
+		if (Duration.between(hinflug.getEnde(), rueckflug.getBeginn())
+				.getSeconds() >= 2 * 60 * 60) {
+			this.hinflug = hinflug;
+			this.rueckflug = rueckflug;
+			this.airline = airline;
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
+
+	@Override
+	public Flug delayDays(int numDays) {
+		return new ToFroFlug(hinflug.getAirline(), hinflug.delayDays(numDays),
+				rueckflug.delayDays(numDays));
 	}
 
 	@Override
