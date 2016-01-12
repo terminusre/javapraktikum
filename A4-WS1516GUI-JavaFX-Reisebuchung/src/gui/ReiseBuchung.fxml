@@ -68,6 +68,7 @@
                                    </columns>
                                  </TableView>
                                  <Button fx:id="uebernehmenButton" layoutX="11.0" layoutY="530.0" mnemonicParsing="false" text="Übernehmen" />
+                                    <Button fx:id="suchenButton" layoutX="410.0" layoutY="85.0" mnemonicParsing="false" text="Verbindungen suchen" />
                               </children>
                            </AnchorPane>
                      </content>

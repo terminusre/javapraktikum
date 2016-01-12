@@ -76,10 +76,8 @@ public class DirektFlug extends OneWayFlug {
 
 	@Override
 	public String toString() {
-		return "Flug " + flugnummer + " der Airline " + airline
-				+ " startet in " + abflughafen + " um " + abflugszeit
-				+ " und landet in " + ankunftflughafen + " um "
-				+ ankunftsflugszeit;
+		return flugnummer + ", " + airline + ", " + abflugszeit + abflughafen
+				+ ", " + ankunftsflugszeit + ", " + ankunftflughafen + ", " + preis;
 	}
 
 	@Override

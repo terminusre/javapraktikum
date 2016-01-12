@@ -36,7 +36,8 @@ public class IataAirport implements Iata {
 
 	@Override
 	public String toString() {
-		return code + ":" + name + ":" + country + ":" + location;
+		return code;
+		// return code + ":" + name + ":" + country + ":" + location;
 	}
 
 }

@@ -13,6 +13,10 @@ public class FlugNummer {
 		return flugnummer;
 	}
 
+	public String toString() {
+		return flugnummer;
+	}
+
 	public int toInt() {
 		return flugnummer.hashCode();
 	}

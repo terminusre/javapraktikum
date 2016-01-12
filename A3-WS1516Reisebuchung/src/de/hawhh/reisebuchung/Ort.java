@@ -14,7 +14,7 @@ public class Ort {
 
 	@Override
 	public String toString() {
-		return "Ort [" + (name != null ? name : "") + "]";
+		return name;
 	}
 
 	@Override
