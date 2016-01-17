@@ -1,7 +1,5 @@
 package gui;
 
-import iata.airport.IataAirport;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -9,6 +7,10 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.List;
 
+import de.hawhh.reisebuchung.RundReise;
+import de.hawhh.reisebuchung.flug.DirektFlug;
+import de.hawhh.reisebuchung.utils.FlugGenerator;
+import iata.airport.IataAirport;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -28,9 +30,6 @@ import javafx.util.converter.IntegerStringConverter;
 import javafx.util.converter.LocalTimeStringConverter;
 import model.DirektFlugWrapper;
 import model.RundReiseWrapper;
-import de.hawhh.reisebuchung.RundReise;
-import de.hawhh.reisebuchung.flug.DirektFlug;
-import de.hawhh.reisebuchung.utils.FlugGenerator;
 
 public class ReiseBuchungController {
 	private RundReiseWrapper rundReiseWrapper;
@@ -104,8 +103,7 @@ public class ReiseBuchungController {
 
 		right_panel_kalenderBox.setValue(LocalDate.now());
 		StringConverter<LocalDate> converter = new StringConverter<LocalDate>() {
-			DateTimeFormatter dateFormatter = DateTimeFormatter
-					.ofPattern(pattern);
+			DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(pattern);
 
 			@Override
 			public LocalDate fromString(String string) {
@@ -126,11 +124,10 @@ public class ReiseBuchungController {
 		right_panel_kalenderBox.setConverter(converter);
 		right_panel_kalenderBox.requestFocus();
 
-		right_panel_uhrzeitBox.setTextFormatter(new TextFormatter<LocalTime>(
-				new LocalTimeStringConverter(FormatStyle.SHORT)));
+		right_panel_uhrzeitBox
+				.setTextFormatter(new TextFormatter<LocalTime>(new LocalTimeStringConverter(FormatStyle.SHORT)));
 
-		right_panel_tageBox.setTextFormatter(new TextFormatter<Integer>(
-				new IntegerStringConverter()));
+		right_panel_tageBox.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter()));
 
 		// left_panel_abflughafen.textProperty().bind(
 		// rundReiseWrapper.getVonProperty());
@@ -145,69 +142,42 @@ public class ReiseBuchungController {
 		// left_panel_preis.textProperty().bind(
 		// rundReiseWrapper.getPreisProperty().asString());
 
-		flugnummernColumn
-				.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>(
-						"flugNr"));
-		abflughafenColumn
-				.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>(
-						"von"));
-		ankunftflughafenColumn
-				.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>(
-						"nach"));
-		abflugszeitColumn
-				.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>(
-						"ab"));
-		ankunftszeitColumn
-				.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>(
-						"an"));
-		preisColumn
-				.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>(
-						"preis"));
+		flugnummernColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("flugNr"));
+		abflughafenColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("von"));
+		ankunftflughafenColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("nach"));
+		abflugszeitColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("ab"));
+		ankunftszeitColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("an"));
+		preisColumn.setCellValueFactory(new PropertyValueFactory<DirektFlugWrapper, String>("preis"));
 
-		suchenButton
-				.setOnAction((ActionEvent e) -> {
-					// Ueberpruefe alle noetigen Werte auf Validitaet
-					if (right_panel_abflughafenDropdownMenue.getValue() != null
-							&& right_panel_ankunftflughafenDropdownMenue
-									.getValue() != null
-							&& right_panel_kalenderBox.getValue() != null
-							&& right_panel_uhrzeitBox.getText() != null
-							&& right_panel_tageBox.getText() != null) {
-						ObservableList<DirektFlugWrapper> l = FXCollections
-								.observableArrayList();
-						verfuegbareFluege = flugGenerator
-								.generateDirektFlugListe(LocalDateTime
-										.parse(right_panel_kalenderBox
-												.getValue()
-												+ "T"
-												+ right_panel_uhrzeitBox
-														.getText() + ":00"),
-										Integer.valueOf(right_panel_tageBox
-												.getText()),
-										right_panel_abflughafenDropdownMenue
-												.getValue(),
-										right_panel_ankunftflughafenDropdownMenue
-												.getValue());
+		suchenButton.setOnAction((ActionEvent e) -> {
+			// Ueberpruefe alle noetigen Werte auf Validitaet
+			if (right_panel_abflughafenDropdownMenue.getValue() != null
+					&& right_panel_ankunftflughafenDropdownMenue.getValue() != null
+					&& right_panel_kalenderBox.getValue() != null && right_panel_uhrzeitBox.getText() != null
+					&& right_panel_tageBox.getText() != null) {
+				ObservableList<DirektFlugWrapper> l = FXCollections.observableArrayList();
+				verfuegbareFluege = flugGenerator.generateDirektFlugListe(
+						LocalDateTime.parse(
+								right_panel_kalenderBox.getValue() + "T" + right_panel_uhrzeitBox.getText() + ":00"),
+						Integer.valueOf(right_panel_tageBox.getText()), right_panel_abflughafenDropdownMenue.getValue(),
+						right_panel_ankunftflughafenDropdownMenue.getValue());
 
-						right_panel_listeVerfuegbarerFluege.setEditable(true);
+				right_panel_listeVerfuegbarerFluege.setEditable(true);
 
-						for (DirektFlug f : verfuegbareFluege)
-							l.add(new DirektFlugWrapper(f));
-						right_panel_listeVerfuegbarerFluege.getItems()
-								.addAll(l);
-					}
-				});
+				for (DirektFlug f : verfuegbareFluege)
+					l.add(new DirektFlugWrapper(f));
+				right_panel_listeVerfuegbarerFluege.getItems().addAll(l);
+			}
+		});
 
 		uebernehmenButton.setOnAction((ActionEvent e) -> {
-			DirektFlugWrapper f = right_panel_listeVerfuegbarerFluege
-					.selectionModelProperty().get().getSelectedItem();
+			DirektFlugWrapper f = right_panel_listeVerfuegbarerFluege.selectionModelProperty().get().getSelectedItem();
 			left_panel_listeGebuchterFluege.getItems().add(f);
 			right_panel_listeVerfuegbarerFluege.getItems().remove(f);
 		});
 
 		flugEntfernenButton.setOnAction((ActionEvent e) -> {
-			DirektFlugWrapper f = left_panel_listeGebuchterFluege
-					.selectionModelProperty().get().getSelectedItem();
+			DirektFlugWrapper f = left_panel_listeGebuchterFluege.selectionModelProperty().get().getSelectedItem();
 			left_panel_listeGebuchterFluege.getItems().remove(f);
 			right_panel_listeVerfuegbarerFluege.getItems().add(f);
 		});
